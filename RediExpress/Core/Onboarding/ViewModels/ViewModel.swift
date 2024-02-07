@@ -22,8 +22,8 @@ extension OnboardingView {
         // содержит полную очередь
         private let fullQueue: [QueueItemModel] = Constants.queue
         
-        // содержит publishers
-        private var cancellables: Set<AnyCancellable> = .init()
+        // содержит queue publisher
+        private var queueCancellable: AnyCancellable? = nil
         
         // init
         init(watchedQueueItemId: String?, customQueue: [QueueItemModel]? = nil) {
@@ -31,18 +31,16 @@ extension OnboardingView {
             
             if let customQueue {
                 self.queue = self.createQueue(watchedQueueItemId: watchedQueueItemId, fullQueue: customQueue)
-                
-                next()
             } else {
                 self.queue = self.createQueue(watchedQueueItemId: watchedQueueItemId, fullQueue: fullQueue)
-                
-                next()
             }
+            
+            next()
         }
         
         // функция next, берет следующий элемент из очереди
         func next() {
-            guard !self.queue.isEmpty else {
+            if self.queue.isEmpty {
                 self.currentQueueItem = nil
                 return
             }
@@ -65,16 +63,18 @@ extension OnboardingView {
         private func createQueue(watchedQueueItemId: String?, fullQueue: [QueueItemModel]) -> [QueueItemModel] {
             guard let watchedQueueItemId else { return fullQueue }
             
-            var queue: [QueueItemModel] = []
-            
             var was = false
             
-            for item in fullQueue {
+            let queue = fullQueue.reduce(Array<QueueItemModel>()) { result, item in
+                var resultQueue = result
+                
                 if was {
-                    queue.append(item)
+                    resultQueue.append(item)
                 } else {
                     was = item.id == watchedQueueItemId
                 }
+                
+                return resultQueue
             }
             
             return queue
@@ -82,15 +82,15 @@ extension OnboardingView {
         
         // создает подписку на queue
         private func addSubcriber() {
-           $queue
+            queueCancellable = $queue
                 .sink { [weak self] queue in
                     if queue.isEmpty {
                         self?.showSkipAndNextButton = false
+                        self?.queueCancellable?.cancel()
                     } else {
                         self?.showSkipAndNextButton = true
                     }
                 }
-                .store(in: &cancellables)
         }
         
         // сохраняет id в UserDefaults
