@@ -1,0 +1,688 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2CBB73A92B73335A003077DD /* RediExpressApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB73A82B73335A003077DD /* RediExpressApp.swift */; };
+		2CBB73AD2B73335B003077DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB73AC2B73335B003077DD /* Assets.xcassets */; };
+		2CBB73B02B73335B003077DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB73AF2B73335B003077DD /* Preview Assets.xcassets */; };
+		2CBB73BA2B7333FD003077DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB73B92B7333FD003077DD /* LaunchScreen.storyboard */; };
+		2CBB73BE2B73385C003077DD /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB73BD2B73385C003077DD /* OnboardingView.swift */; };
+		2CBB73CD2B733949003077DD /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB73C12B733948003077DD /* Roboto-ThinItalic.ttf */; };
+		2CBB73CE2B733949003077DD /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB73C22B733948003077DD /* Roboto-MediumItalic.ttf */; };
+		2CBB73CF2B733949003077DD /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB73C32B733948003077DD /* Roboto-Italic.ttf */; };
+		2CBB73D02B733949003077DD /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB73C42B733948003077DD /* Roboto-Bold.ttf */; };
+		2CBB73D12B733949003077DD /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB73C52B733948003077DD /* Roboto-Medium.ttf */; };
+		2CBB73D22B733949003077DD /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB73C62B733948003077DD /* Roboto-Black.ttf */; };
+		2CBB73D32B733949003077DD /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB73C72B733948003077DD /* Roboto-LightItalic.ttf */; };
+		2CBB73D42B733949003077DD /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB73C82B733948003077DD /* Roboto-Regular.ttf */; };
+		2CBB73D52B733949003077DD /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB73C92B733949003077DD /* Roboto-BoldItalic.ttf */; };
+		2CBB73D62B733949003077DD /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB73CA2B733949003077DD /* Roboto-Thin.ttf */; };
+		2CBB73D72B733949003077DD /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB73CB2B733949003077DD /* Roboto-Light.ttf */; };
+		2CBB73D82B733949003077DD /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB73CC2B733949003077DD /* Roboto-BlackItalic.ttf */; };
+		2CBB73DB2B7339D1003077DD /* OnboardingTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB73DA2B7339D1003077DD /* OnboardingTopView.swift */; };
+		2CBB73DE2B733A64003077DD /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB73DD2B733A64003077DD /* View.swift */; };
+		2CBB73E22B733C3C003077DD /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB73E12B733C3C003077DD /* PrimaryButtonStyle.swift */; };
+		2CBB73E42B733D33003077DD /* SecondaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB73E32B733D33003077DD /* SecondaryButtonStyle.swift */; };
+		2CBB73E72B733E4E003077DD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB73E62B733E4E003077DD /* Constants.swift */; };
+		2CBB73EA2B733E67003077DD /* QueueItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB73E92B733E67003077DD /* QueueItemModel.swift */; };
+		2CBB73ED2B73402A003077DD /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB73EC2B73402A003077DD /* ViewModel.swift */; };
+		2CBB73F12B7340EA003077DD /* HolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB73F02B7340EA003077DD /* HolderView.swift */; };
+		2CBB73F92B7341C3003077DD /* RediExpress_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB73F82B7341C3003077DD /* RediExpress_Tests.swift */; };
+		2CBB74002B7341EB003077DD /* OnboardingViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB73FF2B7341EB003077DD /* OnboardingViewModel_Tests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2CBB73FA2B7341C3003077DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CBB739D2B73335A003077DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2CBB73A42B73335A003077DD;
+			remoteInfo = RediExpress;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2CBB73A52B73335A003077DD /* RediExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RediExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CBB73A82B73335A003077DD /* RediExpressApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RediExpressApp.swift; sourceTree = "<group>"; };
+		2CBB73AC2B73335B003077DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2CBB73AF2B73335B003077DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2CBB73B92B7333FD003077DD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2CBB73BD2B73385C003077DD /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		2CBB73C12B733948003077DD /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		2CBB73C22B733948003077DD /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		2CBB73C32B733948003077DD /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		2CBB73C42B733948003077DD /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		2CBB73C52B733948003077DD /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		2CBB73C62B733948003077DD /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		2CBB73C72B733948003077DD /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		2CBB73C82B733948003077DD /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		2CBB73C92B733949003077DD /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		2CBB73CA2B733949003077DD /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		2CBB73CB2B733949003077DD /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		2CBB73CC2B733949003077DD /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		2CBB73D92B73395F003077DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2CBB73DA2B7339D1003077DD /* OnboardingTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTopView.swift; sourceTree = "<group>"; };
+		2CBB73DD2B733A64003077DD /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		2CBB73E12B733C3C003077DD /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
+		2CBB73E32B733D33003077DD /* SecondaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonStyle.swift; sourceTree = "<group>"; };
+		2CBB73E62B733E4E003077DD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2CBB73E92B733E67003077DD /* QueueItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueItemModel.swift; sourceTree = "<group>"; };
+		2CBB73EC2B73402A003077DD /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		2CBB73F02B7340EA003077DD /* HolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolderView.swift; sourceTree = "<group>"; };
+		2CBB73F62B7341C3003077DD /* RediExpress_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RediExpress_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CBB73F82B7341C3003077DD /* RediExpress_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RediExpress_Tests.swift; sourceTree = "<group>"; };
+		2CBB73FF2B7341EB003077DD /* OnboardingViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel_Tests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2CBB73A22B73335A003077DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CBB73F32B7341C3003077DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2CBB739C2B73335A003077DD = {
+			isa = PBXGroup;
+			children = (
+				2CBB73A72B73335A003077DD /* RediExpress */,
+				2CBB73F72B7341C3003077DD /* RediExpress_Tests */,
+				2CBB73A62B73335A003077DD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2CBB73A62B73335A003077DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2CBB73A52B73335A003077DD /* RediExpress.app */,
+				2CBB73F62B7341C3003077DD /* RediExpress_Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2CBB73A72B73335A003077DD /* RediExpress */ = {
+			isa = PBXGroup;
+			children = (
+				2CBB73D92B73395F003077DD /* Info.plist */,
+				2CBB73A82B73335A003077DD /* RediExpressApp.swift */,
+				2CBB73BF2B733926003077DD /* Common */,
+				2CBB73B62B7333E6003077DD /* Core */,
+				2CBB73AC2B73335B003077DD /* Assets.xcassets */,
+				2CBB73AE2B73335B003077DD /* Preview Content */,
+			);
+			path = RediExpress;
+			sourceTree = "<group>";
+		};
+		2CBB73AE2B73335B003077DD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2CBB73AF2B73335B003077DD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2CBB73B62B7333E6003077DD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				2CBB73EE2B7340DE003077DD /* Holder */,
+				2CBB73B72B7333EC003077DD /* LaunchScreen */,
+				2CBB73BB2B73383E003077DD /* Onboarding */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		2CBB73B72B7333EC003077DD /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2CBB73B82B7333F2003077DD /* Views */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		2CBB73B82B7333F2003077DD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2CBB73B92B7333FD003077DD /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2CBB73BB2B73383E003077DD /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				2CBB73BC2B733849003077DD /* Views */,
+				2CBB73EB2B73401B003077DD /* ViewModels */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		2CBB73BC2B733849003077DD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2CBB73BD2B73385C003077DD /* OnboardingView.swift */,
+				2CBB73DA2B7339D1003077DD /* OnboardingTopView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2CBB73BF2B733926003077DD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2CBB73E82B733E5A003077DD /* Models */,
+				2CBB73E52B733E45003077DD /* Enums */,
+				2CBB73C02B73392C003077DD /* Fonts */,
+				2CBB73DF2B733C23003077DD /* Styles */,
+				2CBB73DC2B733A5A003077DD /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2CBB73C02B73392C003077DD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2CBB73C62B733948003077DD /* Roboto-Black.ttf */,
+				2CBB73CC2B733949003077DD /* Roboto-BlackItalic.ttf */,
+				2CBB73C42B733948003077DD /* Roboto-Bold.ttf */,
+				2CBB73C92B733949003077DD /* Roboto-BoldItalic.ttf */,
+				2CBB73C32B733948003077DD /* Roboto-Italic.ttf */,
+				2CBB73CB2B733949003077DD /* Roboto-Light.ttf */,
+				2CBB73C72B733948003077DD /* Roboto-LightItalic.ttf */,
+				2CBB73C52B733948003077DD /* Roboto-Medium.ttf */,
+				2CBB73C22B733948003077DD /* Roboto-MediumItalic.ttf */,
+				2CBB73C82B733948003077DD /* Roboto-Regular.ttf */,
+				2CBB73CA2B733949003077DD /* Roboto-Thin.ttf */,
+				2CBB73C12B733948003077DD /* Roboto-ThinItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		2CBB73DC2B733A5A003077DD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2CBB73DD2B733A64003077DD /* View.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2CBB73DF2B733C23003077DD /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				2CBB73E02B733C2A003077DD /* ButtonsStyles */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		2CBB73E02B733C2A003077DD /* ButtonsStyles */ = {
+			isa = PBXGroup;
+			children = (
+				2CBB73E12B733C3C003077DD /* PrimaryButtonStyle.swift */,
+				2CBB73E32B733D33003077DD /* SecondaryButtonStyle.swift */,
+			);
+			path = ButtonsStyles;
+			sourceTree = "<group>";
+		};
+		2CBB73E52B733E45003077DD /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				2CBB73E62B733E4E003077DD /* Constants.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		2CBB73E82B733E5A003077DD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2CBB73E92B733E67003077DD /* QueueItemModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2CBB73EB2B73401B003077DD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2CBB73EC2B73402A003077DD /* ViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2CBB73EE2B7340DE003077DD /* Holder */ = {
+			isa = PBXGroup;
+			children = (
+				2CBB73EF2B7340E2003077DD /* Views */,
+			);
+			path = Holder;
+			sourceTree = "<group>";
+		};
+		2CBB73EF2B7340E2003077DD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2CBB73F02B7340EA003077DD /* HolderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2CBB73F72B7341C3003077DD /* RediExpress_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				2CBB73F82B7341C3003077DD /* RediExpress_Tests.swift */,
+				2CBB73FF2B7341EB003077DD /* OnboardingViewModel_Tests.swift */,
+			);
+			path = RediExpress_Tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2CBB73A42B73335A003077DD /* RediExpress */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CBB73B32B73335B003077DD /* Build configuration list for PBXNativeTarget "RediExpress" */;
+			buildPhases = (
+				2CBB73A12B73335A003077DD /* Sources */,
+				2CBB73A22B73335A003077DD /* Frameworks */,
+				2CBB73A32B73335A003077DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RediExpress;
+			productName = RediExpress;
+			productReference = 2CBB73A52B73335A003077DD /* RediExpress.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2CBB73F52B7341C3003077DD /* RediExpress_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CBB73FC2B7341C3003077DD /* Build configuration list for PBXNativeTarget "RediExpress_Tests" */;
+			buildPhases = (
+				2CBB73F22B7341C3003077DD /* Sources */,
+				2CBB73F32B7341C3003077DD /* Frameworks */,
+				2CBB73F42B7341C3003077DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2CBB73FB2B7341C3003077DD /* PBXTargetDependency */,
+			);
+			name = RediExpress_Tests;
+			productName = RediExpress_Tests;
+			productReference = 2CBB73F62B7341C3003077DD /* RediExpress_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2CBB739D2B73335A003077DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					2CBB73A42B73335A003077DD = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					2CBB73F52B7341C3003077DD = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 2CBB73A42B73335A003077DD;
+					};
+				};
+			};
+			buildConfigurationList = 2CBB73A02B73335A003077DD /* Build configuration list for PBXProject "RediExpress" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2CBB739C2B73335A003077DD;
+			productRefGroup = 2CBB73A62B73335A003077DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2CBB73A42B73335A003077DD /* RediExpress */,
+				2CBB73F52B7341C3003077DD /* RediExpress_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2CBB73A32B73335A003077DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CBB73D12B733949003077DD /* Roboto-Medium.ttf in Resources */,
+				2CBB73D42B733949003077DD /* Roboto-Regular.ttf in Resources */,
+				2CBB73D02B733949003077DD /* Roboto-Bold.ttf in Resources */,
+				2CBB73D32B733949003077DD /* Roboto-LightItalic.ttf in Resources */,
+				2CBB73D72B733949003077DD /* Roboto-Light.ttf in Resources */,
+				2CBB73CD2B733949003077DD /* Roboto-ThinItalic.ttf in Resources */,
+				2CBB73CF2B733949003077DD /* Roboto-Italic.ttf in Resources */,
+				2CBB73D82B733949003077DD /* Roboto-BlackItalic.ttf in Resources */,
+				2CBB73D52B733949003077DD /* Roboto-BoldItalic.ttf in Resources */,
+				2CBB73CE2B733949003077DD /* Roboto-MediumItalic.ttf in Resources */,
+				2CBB73D22B733949003077DD /* Roboto-Black.ttf in Resources */,
+				2CBB73BA2B7333FD003077DD /* LaunchScreen.storyboard in Resources */,
+				2CBB73B02B73335B003077DD /* Preview Assets.xcassets in Resources */,
+				2CBB73D62B733949003077DD /* Roboto-Thin.ttf in Resources */,
+				2CBB73AD2B73335B003077DD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CBB73F42B7341C3003077DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2CBB73A12B73335A003077DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CBB73DE2B733A64003077DD /* View.swift in Sources */,
+				2CBB73ED2B73402A003077DD /* ViewModel.swift in Sources */,
+				2CBB73F12B7340EA003077DD /* HolderView.swift in Sources */,
+				2CBB73E22B733C3C003077DD /* PrimaryButtonStyle.swift in Sources */,
+				2CBB73BE2B73385C003077DD /* OnboardingView.swift in Sources */,
+				2CBB73A92B73335A003077DD /* RediExpressApp.swift in Sources */,
+				2CBB73EA2B733E67003077DD /* QueueItemModel.swift in Sources */,
+				2CBB73E72B733E4E003077DD /* Constants.swift in Sources */,
+				2CBB73E42B733D33003077DD /* SecondaryButtonStyle.swift in Sources */,
+				2CBB73DB2B7339D1003077DD /* OnboardingTopView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CBB73F22B7341C3003077DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CBB73F92B7341C3003077DD /* RediExpress_Tests.swift in Sources */,
+				2CBB74002B7341EB003077DD /* OnboardingViewModel_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2CBB73FB2B7341C3003077DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2CBB73A42B73335A003077DD /* RediExpress */;
+			targetProxy = 2CBB73FA2B7341C3003077DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2CBB73B12B73335B003077DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2CBB73B22B73335B003077DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2CBB73B42B73335B003077DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RediExpress/Preview Content\"";
+				DEVELOPMENT_TEAM = 3U7F2TKHLN;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RediExpress/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martynenkovadim.RediExpress;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2CBB73B52B73335B003077DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RediExpress/Preview Content\"";
+				DEVELOPMENT_TEAM = 3U7F2TKHLN;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RediExpress/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martynenkovadim.RediExpress;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2CBB73FD2B7341C3003077DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3U7F2TKHLN;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.martynenkovadim.RediExpress-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RediExpress.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RediExpress";
+			};
+			name = Debug;
+		};
+		2CBB73FE2B7341C3003077DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3U7F2TKHLN;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.martynenkovadim.RediExpress-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RediExpress.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RediExpress";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2CBB73A02B73335A003077DD /* Build configuration list for PBXProject "RediExpress" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CBB73B12B73335B003077DD /* Debug */,
+				2CBB73B22B73335B003077DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CBB73B32B73335B003077DD /* Build configuration list for PBXNativeTarget "RediExpress" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CBB73B42B73335B003077DD /* Debug */,
+				2CBB73B52B73335B003077DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CBB73FC2B7341C3003077DD /* Build configuration list for PBXNativeTarget "RediExpress_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CBB73FD2B7341C3003077DD /* Debug */,
+				2CBB73FE2B7341C3003077DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2CBB739D2B73335A003077DD /* Project object */;
+}
