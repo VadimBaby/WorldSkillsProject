@@ -8,7 +8,11 @@ import SwiftUI
 
 struct OnboardingView: View {
     
-    @StateObject private var viewModel: Self.ViewModel = .init(watchedQueueItemId: nil)
+    @StateObject private var viewModel: Self.ViewModel
+    
+    init(watchedQueueItemId: String?) {
+        self._viewModel = StateObject(wrappedValue: .init(watchedQueueItemId: watchedQueueItemId))
+    }
     
     var body: some View {
         Group {
@@ -86,5 +90,5 @@ extension OnboardingView {
 }
 
 #Preview {
-    OnboardingView()
+    OnboardingView(watchedQueueItemId: nil)
 }

@@ -34,6 +34,7 @@
 		2CBB73F12B7340EA003077DD /* HolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB73F02B7340EA003077DD /* HolderView.swift */; };
 		2CBB73F92B7341C3003077DD /* RediExpress_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB73F82B7341C3003077DD /* RediExpress_Tests.swift */; };
 		2CBB74002B7341EB003077DD /* OnboardingViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB73FF2B7341EB003077DD /* OnboardingViewModel_Tests.swift */; };
+		2CCD7C5F2B735280005A4A45 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD7C5E2B735280005A4A45 /* UserDefaultsKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		2CBB73F62B7341C3003077DD /* RediExpress_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RediExpress_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBB73F82B7341C3003077DD /* RediExpress_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RediExpress_Tests.swift; sourceTree = "<group>"; };
 		2CBB73FF2B7341EB003077DD /* OnboardingViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel_Tests.swift; sourceTree = "<group>"; };
+		2CCD7C5E2B735280005A4A45 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				2CBB73E62B733E4E003077DD /* Constants.swift */,
+				2CCD7C5E2B735280005A4A45 /* UserDefaultsKeys.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				2CBB73F12B7340EA003077DD /* HolderView.swift in Sources */,
 				2CBB73E22B733C3C003077DD /* PrimaryButtonStyle.swift in Sources */,
 				2CBB73BE2B73385C003077DD /* OnboardingView.swift in Sources */,
+				2CCD7C5F2B735280005A4A45 /* UserDefaultsKeys.swift in Sources */,
 				2CBB73A92B73335A003077DD /* RediExpressApp.swift in Sources */,
 				2CBB73EA2B733E67003077DD /* QueueItemModel.swift in Sources */,
 				2CBB73E72B733E4E003077DD /* Constants.swift in Sources */,

@@ -9,9 +9,22 @@ import SwiftUI
 
 @main
 struct RediExpressApp: App {
+    let watchedQueueItemId: String?
+    
+    init() {
+        let watchedQueueItemId = UserDefaults.standard.string(forKey: UserDefaultsKeys.watchedQueueItemId)
+        
+        self.watchedQueueItemId = watchedQueueItemId
+    }
+    
     var body: some Scene {
         WindowGroup {
-            OnboardingView()
+            if let last = Constants.queue.last,
+               watchedQueueItemId != last.id {
+                OnboardingView(watchedQueueItemId: watchedQueueItemId)
+            } else {
+                HolderView()
+            }
         }
     }
 }

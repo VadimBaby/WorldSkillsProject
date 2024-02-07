@@ -7,7 +7,12 @@ import SwiftUI
 
 struct HolderView: View {
     var body: some View {
-        Text("Holder")
+        NavigationStack {
+            Text("Holder")
+                .onTapGesture {
+                    UserDefaults.standard.setValue(nil, forKey: UserDefaultsKeys.watchedQueueItemId)
+                }
+        }
     }
 }
 
