@@ -8,7 +8,7 @@ import SwiftUI
 struct HolderView: View {
     var body: some View {
         NavigationStack {
-            Text("Holder")
+            SignUpView()
         }
     }
 }

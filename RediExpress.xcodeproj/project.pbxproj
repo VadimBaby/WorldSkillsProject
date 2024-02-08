@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C73A1F92B74DC7C00462EF8 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A1F82B74DC7C00462EF8 /* SignUpView.swift */; };
+		2C73A1FC2B74DE5200462EF8 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A1FB2B74DE5200462EF8 /* CustomTextField.swift */; };
+		2C73A1FF2B74DF6600462EF8 /* MainTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A1FE2B74DF6600462EF8 /* MainTextFieldStyle.swift */; };
+		2C73A2012B74E46900462EF8 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A2002B74E46900462EF8 /* CheckBox.swift */; };
+		2C73A2032B74E6FC00462EF8 /* document.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2C73A2022B74E6FC00462EF8 /* document.pdf */; };
+		2C73A2052B74E72E00462EF8 /* PoliticyPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A2042B74E72E00462EF8 /* PoliticyPDFView.swift */; };
+		2C73A2082B74E94100462EF8 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A2072B74E94100462EF8 /* SignUpViewModel.swift */; };
+		2C73A20A2B74E96600462EF8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A2092B74E96600462EF8 /* String.swift */; };
+		2C73A20C2B74EE9F00462EF8 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A20B2B74EE9F00462EF8 /* Binding.swift */; };
+		2C73A20F2B74EFEC00462EF8 /* SupabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A20E2B74EFEC00462EF8 /* SupabaseManager.swift */; };
+		2C73A2132B74F01300462EF8 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 2C73A2122B74F01300462EF8 /* Auth */; };
+		2C73A2152B74F01300462EF8 /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = 2C73A2142B74F01300462EF8 /* Functions */; };
+		2C73A2172B74F01300462EF8 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 2C73A2162B74F01300462EF8 /* PostgREST */; };
+		2C73A2192B74F01300462EF8 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = 2C73A2182B74F01300462EF8 /* Realtime */; };
+		2C73A21B2B74F01300462EF8 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 2C73A21A2B74F01300462EF8 /* Storage */; };
+		2C73A21D2B74F01300462EF8 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 2C73A21C2B74F01300462EF8 /* Supabase */; };
+		2C73A2212B74F1BF00462EF8 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A2202B74F1BF00462EF8 /* LogInView.swift */; };
 		2CBB73A92B73335A003077DD /* RediExpressApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB73A82B73335A003077DD /* RediExpressApp.swift */; };
 		2CBB73AD2B73335B003077DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB73AC2B73335B003077DD /* Assets.xcassets */; };
 		2CBB73B02B73335B003077DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB73AF2B73335B003077DD /* Preview Assets.xcassets */; };
@@ -48,6 +65,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C73A1F82B74DC7C00462EF8 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		2C73A1FB2B74DE5200462EF8 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		2C73A1FE2B74DF6600462EF8 /* MainTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTextFieldStyle.swift; sourceTree = "<group>"; };
+		2C73A2002B74E46900462EF8 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		2C73A2022B74E6FC00462EF8 /* document.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = document.pdf; sourceTree = "<group>"; };
+		2C73A2042B74E72E00462EF8 /* PoliticyPDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliticyPDFView.swift; sourceTree = "<group>"; };
+		2C73A2072B74E94100462EF8 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		2C73A2092B74E96600462EF8 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		2C73A20B2B74EE9F00462EF8 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
+		2C73A20E2B74EFEC00462EF8 /* SupabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseManager.swift; sourceTree = "<group>"; };
+		2C73A2202B74F1BF00462EF8 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		2CBB73A52B73335A003077DD /* RediExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RediExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBB73A82B73335A003077DD /* RediExpressApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RediExpressApp.swift; sourceTree = "<group>"; };
 		2CBB73AC2B73335B003077DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +114,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C73A2172B74F01300462EF8 /* PostgREST in Frameworks */,
+				2C73A2152B74F01300462EF8 /* Functions in Frameworks */,
+				2C73A21D2B74F01300462EF8 /* Supabase in Frameworks */,
+				2C73A2132B74F01300462EF8 /* Auth in Frameworks */,
+				2C73A21B2B74F01300462EF8 /* Storage in Frameworks */,
+				2C73A2192B74F01300462EF8 /* Realtime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,12 +133,87 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C73A1F62B74DC6100462EF8 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				2C73A1F72B74DC7000462EF8 /* Views */,
+				2C73A2062B74E93400462EF8 /* ViewModels */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		2C73A1F72B74DC7000462EF8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C73A1F82B74DC7C00462EF8 /* SignUpView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2C73A1FA2B74DE3E00462EF8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2C73A1FB2B74DE5200462EF8 /* CustomTextField.swift */,
+				2C73A2002B74E46900462EF8 /* CheckBox.swift */,
+				2C73A2042B74E72E00462EF8 /* PoliticyPDFView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2C73A1FD2B74DF5800462EF8 /* TextFieldStyles */ = {
+			isa = PBXGroup;
+			children = (
+				2C73A1FE2B74DF6600462EF8 /* MainTextFieldStyle.swift */,
+			);
+			path = TextFieldStyles;
+			sourceTree = "<group>";
+		};
+		2C73A2062B74E93400462EF8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2C73A2072B74E94100462EF8 /* SignUpViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2C73A20D2B74EFDC00462EF8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2C73A20E2B74EFEC00462EF8 /* SupabaseManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2C73A2112B74F01300462EF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2C73A21E2B74F1A900462EF8 /* LogInView */ = {
+			isa = PBXGroup;
+			children = (
+				2C73A21F2B74F1B400462EF8 /* Views */,
+			);
+			path = LogInView;
+			sourceTree = "<group>";
+		};
+		2C73A21F2B74F1B400462EF8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C73A2202B74F1BF00462EF8 /* LogInView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2CBB739C2B73335A003077DD = {
 			isa = PBXGroup;
 			children = (
 				2CBB73A72B73335A003077DD /* RediExpress */,
 				2CBB73F72B7341C3003077DD /* RediExpress_Tests */,
 				2CBB73A62B73335A003077DD /* Products */,
+				2C73A2112B74F01300462EF8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +231,7 @@
 			children = (
 				2CBB73D92B73395F003077DD /* Info.plist */,
 				2CBB73A82B73335A003077DD /* RediExpressApp.swift */,
+				2C73A2022B74E6FC00462EF8 /* document.pdf */,
 				2CBB73BF2B733926003077DD /* Common */,
 				2CBB73B62B7333E6003077DD /* Core */,
 				2CBB73AC2B73335B003077DD /* Assets.xcassets */,
@@ -141,9 +251,11 @@
 		2CBB73B62B7333E6003077DD /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				2CBB73EE2B7340DE003077DD /* Holder */,
+				2C73A21E2B74F1A900462EF8 /* LogInView */,
 				2CBB73B72B7333EC003077DD /* LaunchScreen */,
 				2CBB73BB2B73383E003077DD /* Onboarding */,
+				2CBB73EE2B7340DE003077DD /* Holder */,
+				2C73A1F62B74DC6100462EF8 /* SignUp */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -185,6 +297,8 @@
 		2CBB73BF2B733926003077DD /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				2C73A20D2B74EFDC00462EF8 /* Utils */,
+				2C73A1FA2B74DE3E00462EF8 /* Components */,
 				2CBB73E82B733E5A003077DD /* Models */,
 				2CBB73E52B733E45003077DD /* Enums */,
 				2CBB73C02B73392C003077DD /* Fonts */,
@@ -217,6 +331,8 @@
 			isa = PBXGroup;
 			children = (
 				2CBB73DD2B733A64003077DD /* View.swift */,
+				2C73A2092B74E96600462EF8 /* String.swift */,
+				2C73A20B2B74EE9F00462EF8 /* Binding.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -224,6 +340,7 @@
 		2CBB73DF2B733C23003077DD /* Styles */ = {
 			isa = PBXGroup;
 			children = (
+				2C73A1FD2B74DF5800462EF8 /* TextFieldStyles */,
 				2CBB73E02B733C2A003077DD /* ButtonsStyles */,
 			);
 			path = Styles;
@@ -304,6 +421,14 @@
 			dependencies = (
 			);
 			name = RediExpress;
+			packageProductDependencies = (
+				2C73A2122B74F01300462EF8 /* Auth */,
+				2C73A2142B74F01300462EF8 /* Functions */,
+				2C73A2162B74F01300462EF8 /* PostgREST */,
+				2C73A2182B74F01300462EF8 /* Realtime */,
+				2C73A21A2B74F01300462EF8 /* Storage */,
+				2C73A21C2B74F01300462EF8 /* Supabase */,
+			);
 			productName = RediExpress;
 			productReference = 2CBB73A52B73335A003077DD /* RediExpress.app */;
 			productType = "com.apple.product-type.application";
@@ -354,6 +479,9 @@
 				Base,
 			);
 			mainGroup = 2CBB739C2B73335A003077DD;
+			packageReferences = (
+				2C73A2102B74EFFB00462EF8 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			productRefGroup = 2CBB73A62B73335A003077DD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -378,6 +506,7 @@
 				2CBB73CF2B733949003077DD /* Roboto-Italic.ttf in Resources */,
 				2CBB73D82B733949003077DD /* Roboto-BlackItalic.ttf in Resources */,
 				2CBB73D52B733949003077DD /* Roboto-BoldItalic.ttf in Resources */,
+				2C73A2032B74E6FC00462EF8 /* document.pdf in Resources */,
 				2CBB73CE2B733949003077DD /* Roboto-MediumItalic.ttf in Resources */,
 				2CBB73D22B733949003077DD /* Roboto-Black.ttf in Resources */,
 				2CBB73BA2B7333FD003077DD /* LaunchScreen.storyboard in Resources */,
@@ -401,17 +530,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C73A1FC2B74DE5200462EF8 /* CustomTextField.swift in Sources */,
 				2CBB73DE2B733A64003077DD /* View.swift in Sources */,
+				2C73A2052B74E72E00462EF8 /* PoliticyPDFView.swift in Sources */,
 				2CBB73ED2B73402A003077DD /* ViewModel.swift in Sources */,
 				2CBB73F12B7340EA003077DD /* HolderView.swift in Sources */,
+				2C73A1FF2B74DF6600462EF8 /* MainTextFieldStyle.swift in Sources */,
+				2C73A2082B74E94100462EF8 /* SignUpViewModel.swift in Sources */,
 				2CBB73E22B733C3C003077DD /* PrimaryButtonStyle.swift in Sources */,
+				2C73A1F92B74DC7C00462EF8 /* SignUpView.swift in Sources */,
 				2CBB73BE2B73385C003077DD /* OnboardingView.swift in Sources */,
+				2C73A20C2B74EE9F00462EF8 /* Binding.swift in Sources */,
 				2CCD7C5F2B735280005A4A45 /* UserDefaultsKeys.swift in Sources */,
 				2CBB73A92B73335A003077DD /* RediExpressApp.swift in Sources */,
+				2C73A20A2B74E96600462EF8 /* String.swift in Sources */,
 				2CBB73EA2B733E67003077DD /* QueueItemModel.swift in Sources */,
+				2C73A2212B74F1BF00462EF8 /* LogInView.swift in Sources */,
+				2C73A20F2B74EFEC00462EF8 /* SupabaseManager.swift in Sources */,
 				2CBB73E72B733E4E003077DD /* Constants.swift in Sources */,
 				2CBB73E42B733D33003077DD /* SecondaryButtonStyle.swift in Sources */,
 				2CBB73DB2B7339D1003077DD /* OnboardingTopView.swift in Sources */,
+				2C73A2012B74E46900462EF8 /* CheckBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,6 +826,50 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2C73A2102B74EFFB00462EF8 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase-community/supabase-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2C73A2122B74F01300462EF8 /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C73A2102B74EFFB00462EF8 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+		2C73A2142B74F01300462EF8 /* Functions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C73A2102B74EFFB00462EF8 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Functions;
+		};
+		2C73A2162B74F01300462EF8 /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C73A2102B74EFFB00462EF8 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		2C73A2182B74F01300462EF8 /* Realtime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C73A2102B74EFFB00462EF8 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Realtime;
+		};
+		2C73A21A2B74F01300462EF8 /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C73A2102B74EFFB00462EF8 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Storage;
+		};
+		2C73A21C2B74F01300462EF8 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C73A2102B74EFFB00462EF8 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2CBB739D2B73335A003077DD /* Project object */;
 }
