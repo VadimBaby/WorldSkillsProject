@@ -24,6 +24,11 @@
 		2C73A21B2B74F01300462EF8 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 2C73A21A2B74F01300462EF8 /* Storage */; };
 		2C73A21D2B74F01300462EF8 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 2C73A21C2B74F01300462EF8 /* Supabase */; };
 		2C73A2212B74F1BF00462EF8 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A2202B74F1BF00462EF8 /* LogInView.swift */; };
+		2C73A2252B75100300462EF8 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A2242B75100300462EF8 /* ForgotPasswordView.swift */; };
+		2C73A22C2B7511AE00462EF8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A22B2B7511AE00462EF8 /* HomeView.swift */; };
+		2C73A22E2B75128100462EF8 /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A22D2B75128100462EF8 /* KeyChainManager.swift */; };
+		2C73A2322B75174B00462EF8 /* OTPVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A2312B75174B00462EF8 /* OTPVerificationView.swift */; };
+		2C73A2362B751D4900462EF8 /* NewPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A2352B751D4900462EF8 /* NewPasswordView.swift */; };
 		2CBB73A92B73335A003077DD /* RediExpressApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB73A82B73335A003077DD /* RediExpressApp.swift */; };
 		2CBB73AD2B73335B003077DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB73AC2B73335B003077DD /* Assets.xcassets */; };
 		2CBB73B02B73335B003077DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB73AF2B73335B003077DD /* Preview Assets.xcassets */; };
@@ -76,6 +81,11 @@
 		2C73A20B2B74EE9F00462EF8 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		2C73A20E2B74EFEC00462EF8 /* SupabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseManager.swift; sourceTree = "<group>"; };
 		2C73A2202B74F1BF00462EF8 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		2C73A2242B75100300462EF8 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		2C73A22B2B7511AE00462EF8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2C73A22D2B75128100462EF8 /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
+		2C73A2312B75174B00462EF8 /* OTPVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVerificationView.swift; sourceTree = "<group>"; };
+		2C73A2352B751D4900462EF8 /* NewPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordView.swift; sourceTree = "<group>"; };
 		2CBB73A52B73335A003077DD /* RediExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RediExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBB73A82B73335A003077DD /* RediExpressApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RediExpressApp.swift; sourceTree = "<group>"; };
 		2CBB73AC2B73335B003077DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -180,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				2C73A20E2B74EFEC00462EF8 /* SupabaseManager.swift */,
+				2C73A22D2B75128100462EF8 /* KeyChainManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -203,6 +214,70 @@
 			isa = PBXGroup;
 			children = (
 				2C73A2202B74F1BF00462EF8 /* LogInView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2C73A2222B750FF100462EF8 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				2C73A2232B750FF900462EF8 /* Views */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		2C73A2232B750FF900462EF8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C73A2242B75100300462EF8 /* ForgotPasswordView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2C73A2292B7511A000462EF8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2C73A22A2B7511A300462EF8 /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2C73A22A2B7511A300462EF8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C73A22B2B7511AE00462EF8 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2C73A22F2B75173300462EF8 /* OTPVerification */ = {
+			isa = PBXGroup;
+			children = (
+				2C73A2302B75174100462EF8 /* Views */,
+			);
+			path = OTPVerification;
+			sourceTree = "<group>";
+		};
+		2C73A2302B75174100462EF8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C73A2312B75174B00462EF8 /* OTPVerificationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2C73A2332B751D2700462EF8 /* NewPassword */ = {
+			isa = PBXGroup;
+			children = (
+				2C73A2342B751D3E00462EF8 /* Views */,
+			);
+			path = NewPassword;
+			sourceTree = "<group>";
+		};
+		2C73A2342B751D3E00462EF8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C73A2352B751D4900462EF8 /* NewPasswordView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -251,6 +326,10 @@
 		2CBB73B62B7333E6003077DD /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2C73A2332B751D2700462EF8 /* NewPassword */,
+				2C73A22F2B75173300462EF8 /* OTPVerification */,
+				2C73A2292B7511A000462EF8 /* Home */,
+				2C73A2222B750FF100462EF8 /* ForgotPassword */,
 				2C73A21E2B74F1A900462EF8 /* LogInView */,
 				2CBB73B72B7333EC003077DD /* LaunchScreen */,
 				2CBB73BB2B73383E003077DD /* Onboarding */,
@@ -537,19 +616,24 @@
 				2CBB73F12B7340EA003077DD /* HolderView.swift in Sources */,
 				2C73A1FF2B74DF6600462EF8 /* MainTextFieldStyle.swift in Sources */,
 				2C73A2082B74E94100462EF8 /* SignUpViewModel.swift in Sources */,
+				2C73A22E2B75128100462EF8 /* KeyChainManager.swift in Sources */,
 				2CBB73E22B733C3C003077DD /* PrimaryButtonStyle.swift in Sources */,
 				2C73A1F92B74DC7C00462EF8 /* SignUpView.swift in Sources */,
 				2CBB73BE2B73385C003077DD /* OnboardingView.swift in Sources */,
 				2C73A20C2B74EE9F00462EF8 /* Binding.swift in Sources */,
 				2CCD7C5F2B735280005A4A45 /* UserDefaultsKeys.swift in Sources */,
+				2C73A2252B75100300462EF8 /* ForgotPasswordView.swift in Sources */,
 				2CBB73A92B73335A003077DD /* RediExpressApp.swift in Sources */,
 				2C73A20A2B74E96600462EF8 /* String.swift in Sources */,
+				2C73A2322B75174B00462EF8 /* OTPVerificationView.swift in Sources */,
 				2CBB73EA2B733E67003077DD /* QueueItemModel.swift in Sources */,
 				2C73A2212B74F1BF00462EF8 /* LogInView.swift in Sources */,
 				2C73A20F2B74EFEC00462EF8 /* SupabaseManager.swift in Sources */,
 				2CBB73E72B733E4E003077DD /* Constants.swift in Sources */,
 				2CBB73E42B733D33003077DD /* SecondaryButtonStyle.swift in Sources */,
 				2CBB73DB2B7339D1003077DD /* OnboardingTopView.swift in Sources */,
+				2C73A22C2B7511AE00462EF8 /* HomeView.swift in Sources */,
+				2C73A2362B751D4900462EF8 /* NewPasswordView.swift in Sources */,
 				2C73A2012B74E46900462EF8 /* CheckBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

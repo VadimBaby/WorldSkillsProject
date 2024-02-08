@@ -26,4 +26,27 @@ final class SupabaseManager {
         
         try await supabase.auth.signOut()
     }
+    
+    func signIn(email: String, password: String) async throws {
+        try await supabase.auth.signIn(
+          email: email,
+          password: password
+        )
+    }
+    
+    func sendOTP(email: String) async throws {
+        try await supabase.auth.resetPasswordForEmail(email)
+    }
+    
+    func verifyOTP(email: String, token: String) async throws {
+        try await supabase.auth.verifyOTP(email: email, token: token, type: .recovery)
+    }
+    
+    func resend(email: String) async throws {
+        try await supabase.auth.resend(email: email, type: .emailChange)
+    }
+    
+    func updatePassword(password: String) async throws {
+        try await supabase.auth.update(user: .init(password: password))
+    }
 }

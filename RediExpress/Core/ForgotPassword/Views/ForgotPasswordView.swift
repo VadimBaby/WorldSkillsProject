@@ -1,5 +1,5 @@
 //
-//  LogInView.swift
+//  ForgotPasswordView.swift
 //  RediExpress
 //
 //  Created by Вадим Мартыненко on 08.02.2024.
@@ -7,85 +7,56 @@
 
 import SwiftUI
 
-struct LogInView: View {
+struct ForgotPasswordView: View {
     
     @State private var email: String = ""
-    @State private var password: String = ""
-    
     @State private var showProgressView: Bool = false
-    @State private var checkedPassword: Bool = false
+    
+    @State private var disabled: Bool = true
     
     @State private var isNavigate: Bool = false
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 33) {
-            
-            Spacer()
-            
+        VStack(alignment: .leading, spacing: 56) {
             VStack(alignment: .leading, spacing: 8) {
-                Text("Welcome Back")
+                Text("Forget Password")
                     .robotoFont(size: 24)
                     .foregroundStyle(Color.customText)
                     .fontWeight(.medium)
-                Text("Fill in your email and password to continue")
+                Text("Enter your email adress")
                     .robotoFont(size: 14)
                     .foregroundStyle(Color.customSecondaryText)
                     .fontWeight(.medium)
             }
-            VStack(spacing: 17) {
-                VStack(spacing: 24) {
-                    CustomTextField(
-                        label: "Email Address",
-                        placeholder: "***********@mail.com",
-                        text: $email
-                    )
-                    CustomTextField(
-                        label: "Password",
-                        placeholder: "**********",
-                        text: $password,
-                        isSecure: true
-                    )
-                }
-                HStack {
-                    HStack {
-                        CheckBox(value: $checkedPassword)
-                        Text("Remember password")
-                            .robotoFont(size: 14)
-                            .foregroundStyle(Color.customSecondaryText)
-                            .fontWeight(.medium)
-                    }
-                    Spacer()
-                    NavigationLink("Forgot Password?") {
-                        ForgotPasswordView()
-                    }
-                    .robotoFont(size: 14)
-                    .fontWeight(.medium)
-                    .foregroundStyle(Color.customPrimary)
-                    
-                }
-            }
-            Spacer()
+            
+            CustomTextField(
+                label: "Email Address",
+                placeholder: "***********@mail.com",
+                text: $email
+            )
+            
             VStack(spacing: 18) {
                 VStack {
                     Button(action: {
-                        signIn()
+                        resetPassword()
                     }, label: {
                         if showProgressView {
                             ProgressView()
                                 .tint(Color.white)
                         } else {
-                            Text("Sign In")
+                            Text("Send OTP")
                         }
                     })
-                    .buttonStyle(PrimaryButtonStyle(maxWidth: .infinity))
+                    .buttonStyle(PrimaryButtonStyle(maxWidth: .infinity, disabled: disabled))
+                    .disabled(disabled)
                     
                     Spacer()
                     HStack(spacing: 1) {
-                        Text("Already have an account?")
+                        Text("Remember password? Back to ")
                             .robotoFont(size: 14)
                             .foregroundStyle(Color.customSecondaryText)
-                        NavigationLink("Sign Up", destination: {
-                            SignUpView()
+                        NavigationLink("Sign In", destination: {
+                            LogInView()
                         })
                         .robotoFont(size: 14)
                         .fontWeight(.medium)
@@ -95,7 +66,7 @@ struct LogInView: View {
                 .frame(height: 82, alignment: .top)
                 
                 VStack {
-                    Text("or log in using")
+                    Text("or sign in using")
                         .robotoFont(size: 14)
                         .foregroundStyle(Color.customSecondaryText)
                     Image("google")
@@ -104,36 +75,25 @@ struct LogInView: View {
                 }
             }
         }
+        .onChange(of: email, { _, newValue in
+            self.disabled = !email.validateEmail()
+        })
         .padding(.horizontal, 24)
         .navigationBarBackButtonHidden()
         .navigationDestination(isPresented: $isNavigate) {
-            HomeView()
+            OTPVerificationView(email: email.trim())
         }
     }
-}
-
-#Preview {
-    NavigationStack {
-        LogInView()
-    }
-}
-
-extension LogInView {
-    func signIn() {
-        guard password.count >= 8 && email.validateEmail() else {
-            return
-        }
-        
+    
+    private func resetPassword() {
         Task {
-            
             await MainActor.run {
                 self.showProgressView = true
             }
             
             do {
-                try await SupabaseManager.instance.signIn(email: email.trim(), password: password)
+                try await SupabaseManager.instance.sendOTP(email: email.trim())
                 await MainActor.run {
-                    KeyChainManager.instance.savePassword(password: password)
                     self.isNavigate = true
                 }
             } catch {
@@ -144,5 +104,11 @@ extension LogInView {
                 self.showProgressView = false
             }
         }
+    }
+}
+
+#Preview {
+    NavigationStack {
+        ForgotPasswordView()
     }
 }
