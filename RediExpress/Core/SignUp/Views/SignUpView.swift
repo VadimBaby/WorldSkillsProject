@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct SignUpView: View {
-    @StateObject private var viewModel: Self.ViewModel = .init()
-    
     @State private var name: String = ""
     @State private var phone: String = ""
     @State private var email: String = ""
@@ -169,12 +167,27 @@ struct SignUpView: View {
             return false
         }        
         
-        return await viewModel.signUp(
+        return await signUpAsync(
             name: name.trim(),
             phone: phone.trim(),
             email: email.trim(),
             password: password.trim()
         )
+    }
+    
+    func signUpAsync (
+        name: String,
+        phone: String,
+        email: String,
+        password: String
+    ) async -> Bool {
+        do {
+            try await SupabaseManager.instance.signUp(name: name, phone: phone, email: email, password: password)
+            return true
+        } catch {
+            print(error.localizedDescription)
+            return false
+        }
     }
 }
 

@@ -13,7 +13,6 @@
 		2C73A2012B74E46900462EF8 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A2002B74E46900462EF8 /* CheckBox.swift */; };
 		2C73A2032B74E6FC00462EF8 /* document.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2C73A2022B74E6FC00462EF8 /* document.pdf */; };
 		2C73A2052B74E72E00462EF8 /* PoliticyPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A2042B74E72E00462EF8 /* PoliticyPDFView.swift */; };
-		2C73A2082B74E94100462EF8 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A2072B74E94100462EF8 /* SignUpViewModel.swift */; };
 		2C73A20A2B74E96600462EF8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A2092B74E96600462EF8 /* String.swift */; };
 		2C73A20C2B74EE9F00462EF8 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A20B2B74EE9F00462EF8 /* Binding.swift */; };
 		2C73A20F2B74EFEC00462EF8 /* SupabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A20E2B74EFEC00462EF8 /* SupabaseManager.swift */; };
@@ -76,7 +75,6 @@
 		2C73A2002B74E46900462EF8 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		2C73A2022B74E6FC00462EF8 /* document.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = document.pdf; sourceTree = "<group>"; };
 		2C73A2042B74E72E00462EF8 /* PoliticyPDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliticyPDFView.swift; sourceTree = "<group>"; };
-		2C73A2072B74E94100462EF8 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		2C73A2092B74E96600462EF8 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		2C73A20B2B74EE9F00462EF8 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		2C73A20E2B74EFEC00462EF8 /* SupabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseManager.swift; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				2C73A1F72B74DC7000462EF8 /* Views */,
-				2C73A2062B74E93400462EF8 /* ViewModels */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -176,14 +173,6 @@
 				2C73A1FE2B74DF6600462EF8 /* MainTextFieldStyle.swift */,
 			);
 			path = TextFieldStyles;
-			sourceTree = "<group>";
-		};
-		2C73A2062B74E93400462EF8 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				2C73A2072B74E94100462EF8 /* SignUpViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		2C73A20D2B74EFDC00462EF8 /* Utils */ = {
@@ -326,15 +315,15 @@
 		2CBB73B62B7333E6003077DD /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				2C73A2332B751D2700462EF8 /* NewPassword */,
-				2C73A22F2B75173300462EF8 /* OTPVerification */,
-				2C73A2292B7511A000462EF8 /* Home */,
-				2C73A2222B750FF100462EF8 /* ForgotPassword */,
-				2C73A21E2B74F1A900462EF8 /* LogInView */,
 				2CBB73B72B7333EC003077DD /* LaunchScreen */,
 				2CBB73BB2B73383E003077DD /* Onboarding */,
 				2CBB73EE2B7340DE003077DD /* Holder */,
 				2C73A1F62B74DC6100462EF8 /* SignUp */,
+				2C73A21E2B74F1A900462EF8 /* LogInView */,
+				2C73A2222B750FF100462EF8 /* ForgotPassword */,
+				2C73A22F2B75173300462EF8 /* OTPVerification */,
+				2C73A2332B751D2700462EF8 /* NewPassword */,
+				2C73A2292B7511A000462EF8 /* Home */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -615,7 +604,6 @@
 				2CBB73ED2B73402A003077DD /* ViewModel.swift in Sources */,
 				2CBB73F12B7340EA003077DD /* HolderView.swift in Sources */,
 				2C73A1FF2B74DF6600462EF8 /* MainTextFieldStyle.swift in Sources */,
-				2C73A2082B74E94100462EF8 /* SignUpViewModel.swift in Sources */,
 				2C73A22E2B75128100462EF8 /* KeyChainManager.swift in Sources */,
 				2CBB73E22B733C3C003077DD /* PrimaryButtonStyle.swift in Sources */,
 				2C73A1F92B74DC7C00462EF8 /* SignUpView.swift in Sources */,

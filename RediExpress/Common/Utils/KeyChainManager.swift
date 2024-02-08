@@ -8,9 +8,11 @@
 import Foundation
 import CryptoKit
 
+// класс для работы с Keychain
 final class KeyChainManager {
     static let instance = KeyChainManager()
     
+    // сохранение пароля в Keychain с использованием SHA512
     func savePassword(password: String) {
         guard let passwordData = password.data(using: .utf8) else {
             print("coding error")

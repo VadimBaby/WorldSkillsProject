@@ -116,7 +116,7 @@ struct OTPVerificationView: View {
         
         Task {
             do {
-                try await SupabaseManager.instance.resend(email: email)
+                try await SupabaseManager.instance.sendOTP(email: email)
             } catch {
                 print(error.localizedDescription)
             }
