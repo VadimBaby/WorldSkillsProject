@@ -14,7 +14,7 @@ struct RediExpressApp: App {
     init() {
         let watchedQueueItemId = UserDefaults.standard.string(forKey: UserDefaultsKeys.watchedQueueItemId)
         
-        self.watchedQueueItemId = watchedQueueItemId
+        self.watchedQueueItemId = nil
     }
     
     var body: some Scene {
