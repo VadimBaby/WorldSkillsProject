@@ -24,13 +24,11 @@ struct LogInView: View {
             
             VStack(alignment: .leading, spacing: 8) {
                 Text("Welcome Back")
-                    .robotoFont(size: 24)
+                    .robotoFont(size: 24, weight: .medium)
                     .foregroundStyle(Color.customText)
-                    .fontWeight(.medium)
                 Text("Fill in your email and password to continue")
-                    .robotoFont(size: 14)
+                    .robotoFont(size: 14, weight: .medium)
                     .foregroundStyle(Color.customSecondaryText)
-                    .fontWeight(.medium)
             }
             VStack(spacing: 17) {
                 VStack(spacing: 24) {
@@ -50,16 +48,14 @@ struct LogInView: View {
                     HStack {
                         CheckBox(value: $checkedPassword)
                         Text("Remember password")
-                            .robotoFont(size: 14)
+                            .robotoFont(size: 14, weight: .medium)
                             .foregroundStyle(Color.customSecondaryText)
-                            .fontWeight(.medium)
                     }
                     Spacer()
                     NavigationLink("Forgot Password?") {
                         ForgotPasswordView()
                     }
-                    .robotoFont(size: 14)
-                    .fontWeight(.medium)
+                    .robotoFont(size: 14, weight: .medium)
                     .foregroundStyle(Color.customPrimary)
                     
                 }
@@ -79,6 +75,15 @@ struct LogInView: View {
                     })
                     .buttonStyle(PrimaryButtonStyle(maxWidth: .infinity))
                     
+                    if #unavailable(iOS 16.0) {
+                        NavigationLink(
+                            destination: HomeView(),
+                            isActive: $isNavigate,
+                            label: {
+                                EmptyView()
+                            })
+                    }
+                    
                     Spacer()
                     HStack(spacing: 1) {
                         Text("Already have an account?")
@@ -87,8 +92,7 @@ struct LogInView: View {
                         NavigationLink("Sign Up", destination: {
                             SignUpView()
                         })
-                        .robotoFont(size: 14)
-                        .fontWeight(.medium)
+                        .robotoFont(size: 14, weight: .medium)
                         .foregroundStyle(Color.customPrimary)
                     }
                 }
@@ -106,16 +110,15 @@ struct LogInView: View {
         }
         .padding(.horizontal, 24)
         .navigationBarBackButtonHidden()
-        .navigationDestination(isPresented: $isNavigate) {
+        .addNavigationDestination(isPresented: $isNavigate){
             HomeView()
         }
     }
 }
 
 #Preview {
-    NavigationStack {
-        LogInView()
-    }
+    LogInView()
+        .addNavigationStack()
 }
 
 extension LogInView {

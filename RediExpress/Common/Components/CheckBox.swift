@@ -22,7 +22,7 @@ struct CheckBox: View {
                             .resizable()
                             .frame(width: 6, height: 6)
                             .foregroundStyle(Color.white)
-                            .bold()
+                            //  .bold()
                     }
             } else {
                 RoundedRectangle(cornerRadius: 2)

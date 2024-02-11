@@ -20,13 +20,11 @@ struct ForgotPasswordView: View {
         VStack(alignment: .leading, spacing: 56) {
             VStack(alignment: .leading, spacing: 8) {
                 Text("Forget Password")
-                    .robotoFont(size: 24)
+                    .robotoFont(size: 24, weight: .medium)
                     .foregroundStyle(Color.customText)
-                    .fontWeight(.medium)
                 Text("Enter your email adress")
-                    .robotoFont(size: 14)
+                    .robotoFont(size: 14, weight: .medium)
                     .foregroundStyle(Color.customSecondaryText)
-                    .fontWeight(.medium)
             }
             
             CustomTextField(
@@ -58,8 +56,7 @@ struct ForgotPasswordView: View {
                         NavigationLink("Sign In", destination: {
                             LogInView()
                         })
-                        .robotoFont(size: 14)
-                        .fontWeight(.medium)
+                        .robotoFont(size: 14, weight: .medium)
                         .foregroundStyle(Color.customPrimary)
                     }
                 }
@@ -73,14 +70,26 @@ struct ForgotPasswordView: View {
                         .resizable()
                         .frame(width: 16, height: 16)
                 }
+                
+                if #unavailable(iOS 16.0) {
+                    NavigationLink(
+                        destination: OTPVerificationView(email: email.trim()),
+                        isActive: $isNavigate,
+                        label: {
+                            EmptyView()
+                        })
+                }
             }
         }
-        .onChange(of: email, { _, newValue in
+        .onChange(of: email, perform: { newValue in
             self.disabled = !email.validateEmail()
         })
+//        .onChange(of: email, { _, newValue in
+//            self.disabled = !email.validateEmail()
+//        })
         .padding(.horizontal, 24)
         .navigationBarBackButtonHidden()
-        .navigationDestination(isPresented: $isNavigate) {
+        .addNavigationDestination(isPresented: $isNavigate) {
             OTPVerificationView(email: email.trim())
         }
     }
@@ -108,7 +117,6 @@ struct ForgotPasswordView: View {
 }
 
 #Preview {
-    NavigationStack {
-        ForgotPasswordView()
-    }
+    ForgotPasswordView()
+        .addNavigationStack()
 }

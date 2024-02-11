@@ -28,13 +28,11 @@ struct SignUpView: View {
             VStack(alignment: .leading, spacing: 33) {
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Create an account")
-                        .robotoFont(size: 24)
+                        .robotoFont(size: 24, weight: .medium)
                         .foregroundStyle(Color.customText)
-                        .fontWeight(.medium)
                     Text("Complete the sign up process to get started")
-                        .robotoFont(size: 14)
+                        .robotoFont(size: 14, weight: .medium)
                         .foregroundStyle(Color.customSecondaryText)
-                        .fontWeight(.medium)
                 }
                 
                 VStack(spacing: 24) {
@@ -120,8 +118,7 @@ struct SignUpView: View {
                             Button("Sign In") {
                                 self.isNavigate = true
                             }
-                            .robotoFont(size: 14)
-                            .fontWeight(.medium)
+                            .robotoFont(size: 14, weight: .medium)
                             .foregroundStyle(Color.customPrimary)
                         }
                     }
@@ -138,6 +135,15 @@ struct SignUpView: View {
                 }
             }
             .padding(.horizontal, 24)
+            
+            if #unavailable(iOS 16.0) {
+                NavigationLink(
+                    destination: LogInView(),
+                    isActive: $isNavigate,
+                    label: {
+                        EmptyView()
+                    })
+            }
         }
         .navigationBarBackButtonHidden()
         .alert(stringError ?? "", isPresented: Binding(error: $stringError)) {
@@ -145,7 +151,7 @@ struct SignUpView: View {
                 self.stringError = nil
             }
         }
-        .navigationDestination(isPresented: $isNavigate) {
+        .addNavigationDestination(isPresented: $isNavigate) {
             LogInView()
         }
     }
@@ -192,7 +198,6 @@ struct SignUpView: View {
 }
 
 #Preview {
-    NavigationStack {
-        SignUpView()
-    }
+    SignUpView()
+        .addNavigationStack()
 }

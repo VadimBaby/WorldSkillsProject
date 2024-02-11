@@ -30,8 +30,7 @@ struct PrimaryButtonStyle: ButtonStyle {
             .frame(width: width, height: 50)
             .frame(maxWidth: maxWidth)
             .foregroundStyle(Color.white)
-            .robotoFont(size: 14)
-            .bold()
+            .robotoFont(size: 14, weight: .bold)
             .background(disabled ? Color.customSecondaryText : Color.customPrimary.opacity(configuration.isPressed ? 0.2 : 1))
             .clipShape(.rect(cornerRadius: 5))
     }

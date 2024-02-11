@@ -21,13 +21,11 @@ struct NewPasswordView: View {
         VStack(alignment: .leading, spacing: 70) {
             VStack(alignment: .leading, spacing: 8) {
                 Text("New Password")
-                    .robotoFont(size: 24)
+                    .robotoFont(size: 24, weight: .medium)
                     .foregroundStyle(Color.customText)
-                    .fontWeight(.medium)
                 Text("Enter new password")
-                    .robotoFont(size: 14)
+                    .robotoFont(size: 14, weight: .medium)
                     .foregroundStyle(Color.customSecondaryText)
-                    .fontWeight(.medium)
             }
             VStack(spacing: 24) {
                 CustomTextField(
@@ -55,20 +53,39 @@ struct NewPasswordView: View {
             })
             .buttonStyle(PrimaryButtonStyle(maxWidth: .infinity, disabled: disabled))
             .disabled(disabled)
+            
+            if #unavailable(iOS 16.0) {
+                NavigationLink(
+                    destination: HomeView(),
+                    isActive: $isNavigate,
+                    label: {
+                        EmptyView()
+                    })
+            }
         }
-        .onChange(of: password, { _, newValue in
+        .onChange(of: password, perform: { newValue in
             guard newValue.count >= 8 && confirmedPassword.count >= 8 else { return }
             
             disabled = newValue != confirmedPassword
         })
-        .onChange(of: confirmedPassword, { _, newValue in
+        .onChange(of: confirmedPassword, perform: { newValue in
             guard password.count >= 8 && newValue.count >= 8 else { return }
             
             disabled = password != newValue
         })
+//        .onChange(of: password, { _, newValue in
+//            guard newValue.count >= 8 && confirmedPassword.count >= 8 else { return }
+//            
+//            disabled = newValue != confirmedPassword
+//        })
+//        .onChange(of: confirmedPassword, { _, newValue in
+//            guard password.count >= 8 && newValue.count >= 8 else { return }
+//            
+//            disabled = password != newValue
+//        })
         .navigationBarBackButtonHidden()
         .padding(.horizontal, 24)
-        .navigationDestination(isPresented: $isNavigate) {
+        .addNavigationDestination(isPresented: $isNavigate) {
             HomeView()
         }
     }
@@ -96,7 +113,6 @@ struct NewPasswordView: View {
 }
 
 #Preview {
-    NavigationStack {
-        NewPasswordView()
-    }
+    NewPasswordView()
+        .addNavigationStack()
 }

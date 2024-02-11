@@ -28,13 +28,11 @@ struct OTPVerificationView: View {
         VStack(alignment: .leading, spacing: 52) {
             VStack(alignment: .leading, spacing: 8) {
                 Text("OTP Verification")
-                    .robotoFont(size: 24)
+                    .robotoFont(size: 24, weight: .medium)
                     .foregroundStyle(Color.customText)
-                    .fontWeight(.medium)
                 Text("Enter the 6 digit numbers sent to your email")
-                    .robotoFont(size: 14)
+                    .robotoFont(size: 14, weight: .medium)
                     .foregroundStyle(Color.customSecondaryText)
-                    .fontWeight(.medium)
             }
             VStack(spacing: 82) {
                 VStack(spacing: 30) {
@@ -50,15 +48,13 @@ struct OTPVerificationView: View {
                     }
                     HStack(spacing: 0) {
                         Text("If you didn’t receive code, ")
-                            .robotoFont(size: 14)
+                            .robotoFont(size: 14, weight: .medium)
                             .foregroundStyle(Color.customSecondaryText)
-                            .fontWeight(.medium)
                         Group {
                             if count >= 0 {
                                 Text("resend after \(count == 60 ? "1:00" : count > 9 ? "0:\(count)" : "0:0\(count)")")
-                                    .robotoFont(size: 14)
+                                    .robotoFont(size: 14, weight: .medium)
                                     .foregroundStyle(Color.customSecondaryText)
-                                    .fontWeight(.medium)
                             } else {
                                 Button("resend") {
                                     resend()
@@ -81,6 +77,15 @@ struct OTPVerificationView: View {
                 })
                 .buttonStyle(PrimaryButtonStyle(maxWidth: .infinity, disabled: disabled))
                 .disabled(disabled)
+                
+                if #unavailable(iOS 16.0) {
+                    NavigationLink(
+                        destination: NewPasswordView(),
+                        isActive: $isNavigate,
+                        label: {
+                            EmptyView()
+                        })
+                }
             }
         }
         .navigationBarBackButtonHidden()
@@ -92,12 +97,17 @@ struct OTPVerificationView: View {
                 stopTimer()
             }
         })
-        .onChange(of: letters) { _, newValue in
+        .onChange(of: letters, perform: { newValue in
             disabled = letters.reduce(true, { partialResult, letter in
                 return letter.isEmpty
             })
-        }
-        .navigationDestination(isPresented: $isNavigate) {
+        })
+//        .onChange(of: letters) { _, newValue in
+//            disabled = letters.reduce(true, { partialResult, letter in
+//                return letter.isEmpty
+//            })
+//        }
+        .addNavigationDestination(isPresented: $isNavigate) {
             NewPasswordView()
         }
     }
@@ -151,9 +161,8 @@ struct OTPVerificationView: View {
 }
 
 #Preview {
-    NavigationStack {
-        OTPVerificationView(email: "someemail")
-    }
+    OTPVerificationView(email: "someemail")
+        .addNavigationStack()
 }
 
 extension OTPVerificationView {

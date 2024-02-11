@@ -26,8 +26,7 @@ struct SecondaryButtonStyle: ButtonStyle {
             .frame(width: width, height: 50)
             .frame(maxWidth: maxWidth)
             .foregroundStyle(Color.customPrimary.opacity(configuration.isPressed ? 0.2 : 1))
-            .robotoFont(size: 14)
-            .bold()
+            .robotoFont(size: 14, weight: .medium)
             .overlay {
                 RoundedRectangle(cornerRadius: 5)
                     .stroke(Color.customPrimary.opacity(configuration.isPressed ? 0.2 : 1), lineWidth: 1)

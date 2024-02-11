@@ -20,9 +20,8 @@ struct OnboardingTopView: View {
                 .frame(width: 346, height: 346)
             VStack(spacing: 10) {
                 Text(title)
-                    .robotoFont(size: 24)
+                    .robotoFont(size: 24, weight: .bold)
                     .foregroundStyle(Color.customPrimary)
-                    .bold()
                     .multilineTextAlignment(.center)
                 Text(subtitle)
                     .robotoFont(size: 16)

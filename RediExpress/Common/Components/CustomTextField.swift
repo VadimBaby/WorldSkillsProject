@@ -28,8 +28,7 @@ struct CustomTextField: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(label)
-                .robotoFont(size: 14)
-                .fontWeight(.medium)
+                .robotoFont(size: 14, weight: .medium)
                 .foregroundStyle(Color.customSecondaryText)
             
             Group {
@@ -52,7 +51,7 @@ struct CustomTextField: View {
                             self.showTextField.toggle()
                         }, label: {
                             Image(systemName: showTextField ? "eye" : "eye.slash")
-                                .bold()
+                                // .bold()
                         })
                         .tint(Color.customBlack)
                         .padding(.trailing, 11)

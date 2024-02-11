@@ -6,6 +6,10 @@
 
 import SwiftUI
 
+enum OnboardingViews: String {
+    case QuickDelivery, FlexiblePayment, RealTimeTracking
+}
+
 struct OnboardingView: View {
     
     @StateObject private var viewModel: Self.ViewModel
@@ -20,8 +24,30 @@ struct OnboardingView: View {
                 VStack {
                     Spacer()
                     
-                    OnboardingTopView(image: currentQueueItem.image, title: currentQueueItem.title, subtitle: currentQueueItem.subtitle)
-                        .transition(.opacity)
+                    if let value = OnboardingViews(rawValue: currentQueueItem.id) {
+                        switch value {
+                        case .QuickDelivery:
+                            OnboardingTopView(image: currentQueueItem.image, title: currentQueueItem.title, subtitle: currentQueueItem.subtitle)
+                                .transition(.opacity)
+                        case .FlexiblePayment:
+                            OnboardingTopView(image: currentQueueItem.image, title: currentQueueItem.title, subtitle: currentQueueItem.subtitle)
+                                .transition(.opacity)
+                        case .RealTimeTracking:
+                            OnboardingTopView(image: currentQueueItem.image, title: currentQueueItem.title, subtitle: currentQueueItem.subtitle)
+                                .transition(.opacity)
+                        }
+                    }
+                    
+//                    if currentQueueItem.id == "QuickDelivery" {
+                    //    OnboardingTopView(image: currentQueueItem.image, title: currentQueueItem.title, subtitle: currentQueueItem.subtitle)
+//                            .transition(.opacity)
+//                    } else if currentQueueItem.id == "FlexiblePayment" {
+//                        OnboardingTopView(image: currentQueueItem.image, title: currentQueueItem.title, subtitle: currentQueueItem.subtitle)
+//                            .transition(.opacity)
+//                    } else if currentQueueItem.id == "RealTimeTracking" {
+//                        OnboardingTopView(image: currentQueueItem.image, title: currentQueueItem.title, subtitle: currentQueueItem.subtitle)
+//                            .transition(.opacity)
+//                    }
                     
                     Spacer()
                     
