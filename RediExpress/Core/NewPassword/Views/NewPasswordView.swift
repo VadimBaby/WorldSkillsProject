@@ -83,7 +83,8 @@ struct NewPasswordView: View {
 //            
 //            disabled = password != newValue
 //        })
-        .navigationBarBackButtonHidden()
+      //  .navigationBarBackButtonHidden()
+        .navigationBarHidden(true)
         .padding(.horizontal, 24)
         .addNavigationDestination(isPresented: $isNavigate) {
             HomeView()

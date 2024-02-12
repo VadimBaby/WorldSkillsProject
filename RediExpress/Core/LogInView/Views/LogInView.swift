@@ -106,10 +106,12 @@ struct LogInView: View {
                         .resizable()
                         .frame(width: 16, height: 16)
                 }
+                .padding(.bottom)
             }
         }
         .padding(.horizontal, 24)
-        .navigationBarBackButtonHidden()
+      //  .navigationBarBackButtonHidden()
+        .navigationBarHidden(true)
         .addNavigationDestination(isPresented: $isNavigate){
             HomeView()
         }

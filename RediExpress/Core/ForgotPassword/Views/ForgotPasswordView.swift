@@ -88,7 +88,8 @@ struct ForgotPasswordView: View {
 //            self.disabled = !email.validateEmail()
 //        })
         .padding(.horizontal, 24)
-        .navigationBarBackButtonHidden()
+       // .navigationBarBackButtonHidden()
+        .navigationBarHidden(true)
         .addNavigationDestination(isPresented: $isNavigate) {
             OTPVerificationView(email: email.trim())
         }

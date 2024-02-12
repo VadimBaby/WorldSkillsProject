@@ -88,7 +88,8 @@ struct OTPVerificationView: View {
                 }
             }
         }
-        .navigationBarBackButtonHidden()
+     //   .navigationBarBackButtonHidden()
+        .navigationBarHidden(true)
         .padding(.horizontal, 24)
         .onReceive(timer, perform: { _ in
             if count >= 0 {

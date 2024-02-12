@@ -145,7 +145,8 @@ struct SignUpView: View {
                     })
             }
         }
-        .navigationBarBackButtonHidden()
+      //  .navigationBarBackButtonHidden()
+        .navigationBarHidden(true)
         .alert(stringError ?? "", isPresented: Binding(error: $stringError)) {
             Button("OK") {
                 self.stringError = nil

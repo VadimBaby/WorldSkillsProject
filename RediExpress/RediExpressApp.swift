@@ -19,12 +19,15 @@ struct RediExpressApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if let last = Constants.queue.last,
-               watchedQueueItemId != last.id {
-                OnboardingView(watchedQueueItemId: watchedQueueItemId)
-            } else {
-                HolderView()
+            Group {
+                if let last = Constants.queue.last,
+                   watchedQueueItemId != last.id {
+                    OnboardingView(watchedQueueItemId: watchedQueueItemId)
+                } else {
+                    HolderView()
+                }
             }
+            .addNavigationStack()
         }
     }
 }

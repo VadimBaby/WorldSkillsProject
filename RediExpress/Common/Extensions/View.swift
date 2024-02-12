@@ -50,4 +50,15 @@ extension View {
             .navigationViewStyle(StackNavigationViewStyle())
         }
     }
+    
+    @ViewBuilder func addNavigationTitle(title: String, closure: (() -> Void)?) -> some View {
+        ZStack(alignment: .top) {
+            self
+                .padding(.top, 55)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            
+            HeaderView(title: title, dismiss: closure)
+        }
+        .navigationBarHidden(true)
+    }
 }

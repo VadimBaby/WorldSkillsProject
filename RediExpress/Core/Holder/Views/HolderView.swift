@@ -8,10 +8,10 @@ import SwiftUI
 struct HolderView: View {
     var body: some View {
         SignUpView()
-            .addNavigationStack()
     }
 }
 
 #Preview {
     HolderView()
+        .addNavigationStack()
 }
