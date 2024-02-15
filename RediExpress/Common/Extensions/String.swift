@@ -10,11 +10,10 @@ import Foundation
 extension String {
     func validateEmail() -> Bool {
 //        let emailRegex = #"^[a-z0-9]+@[a-z0-9]+\.[a-z]{2,}$"#
-//        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
-//        
-//        return emailPredicate.evaluate(with: self)
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
         
-        return true
+        return emailPredicate.evaluate(with: self)
     }
     
     func trim() -> String {
