@@ -66,6 +66,8 @@
 		2CBCCBB92B7A7C9500CD893A /* PackageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBCCBB82B7A7C9500CD893A /* PackageModel.swift */; };
 		2CBCCBBD2B7A7FE100CD893A /* ReceiptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBCCBBC2B7A7FE100CD893A /* ReceiptView.swift */; };
 		2CBCCBC12B7A857000CD893A /* TrackingPackageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBCCBC02B7A857000CD893A /* TrackingPackageView.swift */; };
+		2CBCCBC52B7B2F1A00CD893A /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBCCBC42B7B2F1A00CD893A /* TransactionView.swift */; };
+		2CBCCBC72B7B3B3900CD893A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBCCBC62B7B3B3900CD893A /* LocationManager.swift */; };
 		2CCD7C5F2B735280005A4A45 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD7C5E2B735280005A4A45 /* UserDefaultsKeys.swift */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +138,8 @@
 		2CBCCBB82B7A7C9500CD893A /* PackageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageModel.swift; sourceTree = "<group>"; };
 		2CBCCBBC2B7A7FE100CD893A /* ReceiptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptView.swift; sourceTree = "<group>"; };
 		2CBCCBC02B7A857000CD893A /* TrackingPackageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingPackageView.swift; sourceTree = "<group>"; };
+		2CBCCBC42B7B2F1A00CD893A /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
+		2CBCCBC62B7B3B3900CD893A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2CCD7C5E2B735280005A4A45 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				2C73A20E2B74EFEC00462EF8 /* SupabaseManager.swift */,
+				2CBCCBC62B7B3B3900CD893A /* LocationManager.swift */,
 				2C73A22D2B75128100462EF8 /* KeyChainManager.swift */,
 				2C3CD8312B78ED1600DD472F /* NetworkMonitor.swift */,
 			);
@@ -340,6 +345,7 @@
 		2CBB73B62B7333E6003077DD /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2CBCCBC22B7B2EFA00CD893A /* Transaction */,
 				2CBCCBBE2B7A855C00CD893A /* TrackingPackage */,
 				2CBCCBBA2B7A7FC500CD893A /* Receipt */,
 				2CBCCBB22B7A6E4B00CD893A /* SendPackage */,
@@ -602,6 +608,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		2CBCCBC22B7B2EFA00CD893A /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				2CBCCBC32B7B2F0D00CD893A /* Views */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		2CBCCBC32B7B2F0D00CD893A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2CBCCBC42B7B2F1A00CD893A /* TransactionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -752,6 +774,7 @@
 				2C73A20A2B74E96600462EF8 /* String.swift in Sources */,
 				2C73A2322B75174B00462EF8 /* OTPVerificationView.swift in Sources */,
 				2CBB73EA2B733E67003077DD /* QueueItemModel.swift in Sources */,
+				2CBCCBC52B7B2F1A00CD893A /* TransactionView.swift in Sources */,
 				2C73A2212B74F1BF00462EF8 /* LogInView.swift in Sources */,
 				2C73A20F2B74EFEC00462EF8 /* SupabaseManager.swift in Sources */,
 				2CBB73E72B733E4E003077DD /* Constants.swift in Sources */,
@@ -762,6 +785,7 @@
 				2C73A2362B751D4900462EF8 /* NewPasswordView.swift in Sources */,
 				2CBCCBBD2B7A7FE100CD893A /* ReceiptView.swift in Sources */,
 				2C73A2012B74E46900462EF8 /* CheckBox.swift in Sources */,
+				2CBCCBC72B7B3B3900CD893A /* LocationManager.swift in Sources */,
 				2CBCCBA52B7A305D00CD893A /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

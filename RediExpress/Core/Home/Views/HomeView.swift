@@ -80,6 +80,9 @@ struct HomeView: View {
         }
       //  .navigationBarBackButtonHidden()
         .navigationBarHidden(true)
+        .onAppear {
+            LocationManager.instance.requestPermission()
+        }
     }
 }
 

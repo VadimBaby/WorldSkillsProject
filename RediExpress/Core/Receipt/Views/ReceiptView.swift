@@ -9,103 +9,198 @@ import SwiftUI
 
 struct ReceiptView: View {
     
-    @State private var angle: Double = 0
-    @State private var success: Bool = false
+    let originAddress: String
+    let originCountry: String
+    let originPhone: String
+    let originOthers: String
     
-    let timer = Timer.publish(every: 0.001, on: .main, in: .common)
-        .autoconnect()
+    let sections: [SendPackageSection]
     
-    @State private var count: Double = 0
+    let items: String
+    let weight: String
+    let worth: String
+    let trackNumber: String
     
-    let track: String
+    @Environment(\.dismiss) var dismiss
     
-    @State private var navigateTrack: Bool = false
-    @State private var navigateHome: Bool = false
+    @State private var isNavigate: Bool = false
     
     var body: some View {
-        VStack {
-                Spacer()
-                .animation(.none, value: success)
-                .animation(.none, value: angle)
-                Group {
-                    if success {
-                        Image("success")
-                            .resizable()
-                            .frame(width: 119, height: 119)
-                            .animation(.none, value: angle)
-                    } else {
-                        Circle()
-                            .stroke(
-                                AngularGradient(colors: [Color.orange, Color.white], center: .center, startAngle: Angle(degrees: angle), endAngle: Angle(degrees: angle + 360))
-                                , style: .init(lineWidth: 10, lineCap: .round, lineJoin: .round))
-                            .frame(width: 119, height: 119)
+        ScrollView {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Package Information")
+                    .robotoFont(size: 16, weight: .medium)
+                    .foregroundStyle(Color.accentColor)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Origin Details")
+                        .robotoFont(size: 12, weight: .regular)
+                        .foregroundStyle(Color.customBlack)
+                    Text(originAddress + ", " + originCountry)
+                        .robotoFont(size: 12, weight: .regular)
+                        .foregroundStyle(Color.customSecondaryText)
+                    Text(originPhone)
+                        .robotoFont(size: 12, weight: .regular)
+                        .foregroundStyle(Color.customSecondaryText)
+                }
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Destination Details")
+                        .robotoFont(size: 12, weight: .regular)
+                        .foregroundStyle(Color.customBlack)
+                    ForEach(sections.indices, id: \.self) { index in
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("\(index + 1). " + sections[index].address + ", " + sections[index].country)
+                                .robotoFont(size: 12, weight: .regular)
+                                .foregroundStyle(Color.customSecondaryText)
+                            Text(sections[index].phone)
+                                .robotoFont(size: 12, weight: .regular)
+                                .foregroundStyle(Color.customSecondaryText)
+                        }
                     }
                 }
-                .frame(width: 119, height: 119)
-                VStack(spacing: 8) {
-                    if success {
-                        Text("Transaction Successful")
-                            .robotoFont(size: 24, weight: .medium)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Other Details")
+                        .robotoFont(size: 12, weight: .regular)
+                        .foregroundStyle(Color.customBlack)
+                    HStack {
+                        Text("Package Items")
+                            .robotoFont(size: 12, weight: .regular)
+                            .foregroundStyle(Color.customSecondaryText)
+                        Spacer()
+                        Text(items)
+                            .robotoFont(size: 12, weight: .regular)
+                            .foregroundStyle(Color("CustomSecondaryColor"))
+                        
                     }
-                    
-                    Text("Your rider is on the way to your destination")
-                        .robotoFont(size: 14, weight: .regular)
-                    Text("Tracking Number:")
-                        .robotoFont(size: 14, weight: .regular)
-                        .multilineTextAlignment(.center)
-                    Text(track)
-                        .robotoFont(size: 14, weight: .regular)
+                    HStack {
+                        Text("Weight of items")
+                            .robotoFont(size: 12, weight: .regular)
+                            .foregroundStyle(Color.customSecondaryText)
+                        Spacer()
+                        Text(weight)
+                            .robotoFont(size: 12, weight: .regular)
+                            .foregroundStyle(Color("CustomSecondaryColor"))
+                        
+                    }
+                    HStack {
+                        Text("Worth of Items")
+                            .robotoFont(size: 12, weight: .regular)
+                            .foregroundStyle(Color.customSecondaryText)
+                        Spacer()
+                        Text(worth)
+                            .robotoFont(size: 12, weight: .regular)
+                            .foregroundStyle(Color("CustomSecondaryColor"))
+                        
+                    }
+                    HStack {
+                        Text("Tracking Number")
+                            .robotoFont(size: 12, weight: .regular)
+                            .foregroundStyle(Color.customSecondaryText)
+                        Spacer(minLength: 0)
+                        Text(trackNumber)
+                            .robotoFont(size: 12, weight: .regular)
+                            .foregroundStyle(Color("CustomSecondaryColor"))
+                        
+                    }
+                }
+                Divider()
+                    .padding(.top, 27)
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Charges")
+                        .robotoFont(size: 16, weight: .medium)
                         .foregroundStyle(Color.accentColor)
-                }
-                .foregroundStyle(Color.customBlack)
-                .padding(.top, 98)
-                .animation(.none, value: success)
-                .animation(.none, value: angle)
-                
-                Spacer()
-                .animation(.none, value: success)
-                .animation(.none, value: angle)
-                
-                VStack {
-                    Button("Track My Item") {
-                        self.navigateTrack = true
+                    HStack {
+                        Text("Delivery Charges")
+                            .robotoFont(size: 12, weight: .regular)
+                            .foregroundStyle(Color.customSecondaryText)
+                        Spacer()
+                        Text(String(format: "N%.2f", Double(2500 * sections.count)))
+                            .robotoFont(size: 12, weight: .regular)
+                            .foregroundStyle(Color("CustomSecondaryColor"))
+                        
                     }
-                    .buttonStyle(PrimaryButtonStyle(maxWidth: .infinity))
-                    
-                    Button("Go back to homepage") {
-                        self.navigateHome = true
+                    HStack {
+                        Text("Instant delivery")
+                            .robotoFont(size: 12, weight: .regular)
+                            .foregroundStyle(Color.customSecondaryText)
+                        Spacer()
+                        Text("N300.00")
+                            .robotoFont(size: 12, weight: .regular)
+                            .foregroundStyle(Color("CustomSecondaryColor"))
+                        
                     }
-                    .buttonStyle(SecondaryButtonStyle(maxWidth: .infinity))
+                    HStack {
+                        Text("Tax and Service Charges")
+                            .robotoFont(size: 12, weight: .regular)
+                            .foregroundStyle(Color.customSecondaryText)
+                        Spacer()
+                        Text(String(format: "N%.2f", getTax()))
+                            .robotoFont(size: 12, weight: .regular)
+                            .foregroundStyle(Color("CustomSecondaryColor"))
+                        
+                    }
+                    Divider()
+                    HStack {
+                        Text("Package total")
+                            .robotoFont(size: 12, weight: .regular)
+                            .foregroundStyle(Color.customSecondaryText)
+                        Spacer()
+                        Text(String(format: "N%.2f", total()))
+                            .robotoFont(size: 12, weight: .regular)
+                            .foregroundStyle(Color("CustomSecondaryColor"))
+                        
+                    }
                 }
-                .animation(.none, value: success)
-                .animation(.none, value: angle)
-            NavigationLink(isActive: $navigateTrack) {
-                TrackingPackageView()
-            } label: {
-                EmptyView()
+                HStack {
+                    Button("Edit Package") {
+                        dismiss()
+                    }
+                    .buttonStyle(SecondaryButtonStyle(width: 160))
+                    Spacer()
+                    Button("Make Payment") {
+                        self.isNavigate = true
+                    }
+                    .buttonStyle(PrimaryButtonStyle(width: 160))
+                }
+                .padding(.top)
+                NavigationLink(destination: TransactionView(track: trackNumber), isActive: $isNavigate) {
+                    EmptyView()
+                }
             }
-            NavigationLink(isActive: $navigateHome) {
-                HomeView()
-            } label: {
-                EmptyView()
-            }
+            .padding(.top, 20)
+            .padding(.horizontal, 24)
         }
-        .padding(.horizontal)
-        .padding(.bottom)
-        .onAppear {
-            withAnimation(.linear(duration: 2)) {
-                self.angle = 360 * -2
-            }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                self.success = true
-            })
+        .addNavigationTitle(title: "Send a package") {
+            dismiss()
         }
-        .navigationBarHidden(true)
+    }
+    
+    private func total() -> Double {
+        let dileviry: Double = 2500 * Double(sections.count)
+        let instance: Double = 300
+        let tax = getTax()
+        
+        return dileviry + instance + tax
+    }
+    
+    private func getTax() -> Double {
+        let dileviry: Double = 2500 * Double(sections.count)
+        let instance: Double = 300
+        let sum = dileviry + instance
+        return sum * 0.05
     }
 }
 
 #Preview {
-    ReceiptView(track: "R-\(UUID().uuidString)")
+    ReceiptView(
+        originAddress: "Origin Adress",
+        originCountry: "Origin Country",
+        originPhone: "Origin phone",
+        originOthers: "Origin others",
+        sections: [.init(address: "Destiatnion adress", country: "des country", phone: "des phone", others: "")],
+        items: "items",
+        weight: "weight",
+        worth: "worth",
+        trackNumber: "R-\(UUID().uuidString)"
+    )
         .addNavigationStack()
 }

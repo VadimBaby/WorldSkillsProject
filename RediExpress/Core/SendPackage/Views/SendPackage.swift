@@ -32,8 +32,6 @@ struct SendPackage: View {
     @State private var weight: String = ""
     @State private var worth: String = ""
     
-    private let locationManager: CLLocationManager = .init()
-    
     @State private var isNavigate: Bool = false
     
     @State private var track: String = ""
@@ -160,7 +158,17 @@ struct SendPackage: View {
                     .fill(Color.white)
                     .frame(height: 40)
                 NavigationLink(
-                    destination: ReceiptView(track: track),
+                    destination: ReceiptView(
+                        originAddress: originaddress,
+                        originCountry: origincountry,
+                        originPhone: originphone,
+                        originOthers: originothers,
+                        sections: sections,
+                        items: items,
+                        weight: weight,
+                        worth: worth,
+                        trackNumber: track
+                    ),
                     isActive: $isNavigate,
                     label: {
                         EmptyView()
@@ -172,11 +180,7 @@ struct SendPackage: View {
             dismiss()
         }
         .onAppear {
-            if locationManager.authorizationStatus == .notDetermined {
-                locationManager.requestWhenInUseAuthorization()
-            }
-            
-            if let userLocation = locationManager.location {
+            if let userLocation = LocationManager.instance.getLocation() {
                 CLGeocoder().reverseGeocodeLocation(userLocation) { placemarks, error in
                     if let place = placemarks?.first {
 //                        text = "Country \(place.country ?? "error"), name: \(place.name ?? "error")"
@@ -211,67 +215,28 @@ struct SendPackage: View {
         }
         
         if !someIsEmpty {
-            if sections.count > 1 {
-                Task {
-                    do {
-                        try await SupabaseManager.instance.sendPackage(package: .init(
-                            id: trackNumber,
-                            created_at: .now,
-                            origin_address: originaddress,
-                            origin_state_country: origincountry,
-                            origin_phonenumber: originphone,
-                            origin_others: originothers.isEmpty ? nil : originothers,
-                            destination_address: sections[0].address,
-                            destination_state_country: sections[0].country,
-                            destination_phonenumber: sections[0].phone,
-                            destination_others: sections[0].others.isEmpty ? nil : sections[0].address,
-                            destination2_address: sections[1].address.isEmpty ? nil : sections[1].address,
-                            destination2_state_country: sections[1].country.isEmpty ? nil : sections[1].country,
-                            destination2_phonenumber: sections[1].phone.isEmpty ? nil : sections[1].phone,
-                            destination2_others: sections[1].others.isEmpty ? nil : sections[1].others,
-                            package_item: items,
-                            weight_of_item: weight,
-                            worth_of_items: worth,
-                            customer_id: .init()
-                        ))
-                        
-                        await MainActor.run {
-                            self.isNavigate = true
-                        }
-                    } catch {
-                        print(error.localizedDescription)
+            Task {
+                do {
+                    let package: PackageModel = .init(
+                        id: trackNumber,
+                        created_at: .now,
+                        origin_address: originaddress,
+                        origin_state_country: origincountry,
+                        origin_phone_number: originphone,
+                        origin_others: originothers,
+                        package_item: items,
+                        weight_of_item: weight,
+                        worth_of_items: worth,
+                        customer_id: UUID()
+                    )
+                    
+                    try await SupabaseManager.instance.sendPackage(package: package, sections: sections)
+                    
+                    await MainActor.run {
+                        self.isNavigate = true
                     }
-                }
-            } else {
-                Task {
-                    do {
-                        try await SupabaseManager.instance.sendPackage(package: .init(
-                            id: trackNumber,
-                            created_at: .now,
-                            origin_address: originaddress,
-                            origin_state_country: origincountry,
-                            origin_phonenumber: originphone,
-                            origin_others: originothers.isEmpty ? nil : originothers,
-                            destination_address: sections[0].address,
-                            destination_state_country: sections[0].country,
-                            destination_phonenumber: sections[0].phone,
-                            destination_others: sections[0].others.isEmpty ? nil : sections[0].address,
-                            destination2_address: nil,
-                            destination2_state_country: nil,
-                            destination2_phonenumber: nil,
-                            destination2_others: nil,
-                            package_item: items,
-                            weight_of_item: weight,
-                            worth_of_items: worth,
-                            customer_id: .init()
-                        ))
-                        
-                        await MainActor.run {
-                            self.isNavigate = true
-                        }
-                    } catch {
-                        print(error.localizedDescription)
-                    }
+                } catch {
+                    print(error.localizedDescription)
                 }
             }
         }

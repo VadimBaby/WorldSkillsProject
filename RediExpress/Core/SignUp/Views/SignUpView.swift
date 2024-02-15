@@ -162,11 +162,11 @@ struct SignUpView: View {
             return false
         }
         
-        guard email.trim().validateEmail() else {
-            emailTextFieldError = true
-            stringError = "Write correct email"
-            return false
-        }
+//        guard email.trim().validateEmail() else {
+//            emailTextFieldError = true
+//            stringError = "Write correct email"
+//            return false
+//        }
         
         emailTextFieldError = false
         

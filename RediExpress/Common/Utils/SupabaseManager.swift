@@ -16,6 +16,7 @@ final class SupabaseManager {
     
     private let user_info: String = "user_info"
     private let packages: String = "packages"
+    private let destinations: String = "destinations"
     
     // подключение supabase
     let supabase = SupabaseClient(supabaseURL: URL(string: "https://ojrdmoyefygpgzqyuemx.supabase.co")!, supabaseKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9qcmRtb3llZnlncGd6cXl1ZW14Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDcyOTU2NDUsImV4cCI6MjAyMjg3MTY0NX0.ZgAyZ57Ga_qcX-632P8ZmtQ7r0bfN8fc-CVnpfupzV8")
@@ -86,14 +87,34 @@ final class SupabaseManager {
         return first.balance
     }
     
-    func sendPackage(package: PackageModel) async throws {
+    func sendPackage(package: PackageModel, sections: [SendPackageSection]) async throws {
         let user = try await supabase.auth.session.user
         
-        var mypackage = package.changeCustomer(customerId: user.id)
+        let mypackage = package.changeCustomer(customerId: user.id)
+        
+        let destinations = sections.map { section in
+            return DestinationModel(
+                id: UUID(),
+                address: section.address,
+                state_country: section.country,
+                phone_number: section.phone,
+                others: section.others,
+                package_id: mypackage.id,
+                customer_id: user.id,
+                created_at: .now
+            )
+        }
         
         try await supabase.database
           .from(packages)
           .insert(mypackage)
           .execute()
+        
+        for item in destinations {
+            try await supabase.database
+                .from(self.destinations)
+                .insert(item)
+                .execute()
+        }
     }
 }
