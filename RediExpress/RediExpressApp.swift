@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct RediExpressApp: App {
+    @State private var isLogin: Bool? = nil
+    
     let watchedQueueItemId: String?
     
     init() {
@@ -19,15 +21,35 @@ struct RediExpressApp: App {
     
     var body: some Scene {
         WindowGroup {
-            Group {
-                if let last = Constants.queue.last,
-                   watchedQueueItemId != last.id {
-                    OnboardingView(watchedQueueItemId: watchedQueueItemId)
+            ZStack {
+                if let isLogin {
+                    if isLogin {
+                        Group {
+                            HomeView()
+                        }
+                        .addNavigationStack()
+                    } else {
+                        Group {
+                            if let last = Constants.queue.last,
+                               watchedQueueItemId != last.id {
+                                OnboardingView(watchedQueueItemId: watchedQueueItemId)
+                            } else {
+                                HolderView()
+                            }
+                        }
+                        .addNavigationStack()
+                    }
                 } else {
-                    HolderView()
+                    ProgressView()
                 }
             }
-            .addNavigationStack()
+            .task {
+                let isLogin = await SupabaseManager.instance.isLogIn()
+                
+                await MainActor.run {
+                    self.isLogin = isLogin
+                }
+            }
         }
     }
 }

@@ -198,7 +198,7 @@ struct SendPackage: View {
     }
     
     private func instanceDelivery() {
-        let trackNumber = "R-\(UUID().uuidString)"
+        let trackNumber = UUID().returnTrack()
         
         self.track = trackNumber
         

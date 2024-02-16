@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C1F62EC2B7F904700C4096A /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1F62EB2B7F904700C4096A /* TransactionModel.swift */; };
+		2C1F62EE2B7F950700C4096A /* UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1F62ED2B7F950700C4096A /* UUID.swift */; };
 		2C3CD8322B78ED1600DD472F /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3CD8312B78ED1600DD472F /* NetworkMonitor.swift */; };
 		2C73A1F92B74DC7C00462EF8 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A1F82B74DC7C00462EF8 /* SignUpView.swift */; };
 		2C73A1FC2B74DE5200462EF8 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A1FB2B74DE5200462EF8 /* CustomTextField.swift */; };
@@ -82,6 +84,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C1F62EB2B7F904700C4096A /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
+		2C1F62ED2B7F950700C4096A /* UUID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUID.swift; sourceTree = "<group>"; };
 		2C3CD8312B78ED1600DD472F /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		2C73A1F82B74DC7C00462EF8 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		2C73A1FB2B74DE5200462EF8 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -438,6 +442,7 @@
 				2CBB73DD2B733A64003077DD /* View.swift */,
 				2C73A2092B74E96600462EF8 /* String.swift */,
 				2C73A20B2B74EE9F00462EF8 /* Binding.swift */,
+				2C1F62ED2B7F950700C4096A /* UUID.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -475,6 +480,7 @@
 				2CBB73E92B733E67003077DD /* QueueItemModel.swift */,
 				2CBCCBA62B7A4D9A00CD893A /* UserInfoModel.swift */,
 				2CBCCBB82B7A7C9500CD893A /* PackageModel.swift */,
+				2C1F62EB2B7F904700C4096A /* TransactionModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -770,6 +776,7 @@
 				2CBCCBC12B7A857000CD893A /* TrackingPackageView.swift in Sources */,
 				2CBCCBA72B7A4D9A00CD893A /* UserInfoModel.swift in Sources */,
 				2C73A2252B75100300462EF8 /* ForgotPasswordView.swift in Sources */,
+				2C1F62EC2B7F904700C4096A /* TransactionModel.swift in Sources */,
 				2CBB73A92B73335A003077DD /* RediExpressApp.swift in Sources */,
 				2C73A20A2B74E96600462EF8 /* String.swift in Sources */,
 				2C73A2322B75174B00462EF8 /* OTPVerificationView.swift in Sources */,
@@ -784,6 +791,7 @@
 				2C73A22C2B7511AE00462EF8 /* HomeView.swift in Sources */,
 				2C73A2362B751D4900462EF8 /* NewPasswordView.swift in Sources */,
 				2CBCCBBD2B7A7FE100CD893A /* ReceiptView.swift in Sources */,
+				2C1F62EE2B7F950700C4096A /* UUID.swift in Sources */,
 				2C73A2012B74E46900462EF8 /* CheckBox.swift in Sources */,
 				2CBCCBC72B7B3B3900CD893A /* LocationManager.swift in Sources */,
 				2CBCCBA52B7A305D00CD893A /* HeaderView.swift in Sources */,
