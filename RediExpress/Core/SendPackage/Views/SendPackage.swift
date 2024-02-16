@@ -61,7 +61,7 @@ struct SendPackage: View {
                     }
                     .padding(.top, 27)
                     
-                    VStack(spacing: 20) {
+                    VStack(alignment: .leading, spacing: 20) {
                         ForEach(sections.indices, id: \.self) { index in
                             VStack(alignment: .leading) {
                                 HStack {
@@ -81,25 +81,29 @@ struct SendPackage: View {
                                     TextField("Others", text: $sections[index].others)
                                         .textFieldStyle(ShadowTextFieldStyle())
                                 }
-                                Button(action: {
-                                    self.sections.append(.init(address: "", country: "", phone: "", others: ""))
-                                }, label: {
-                                    HStack {
-                                        RoundedRectangle(cornerRadius: 5)
-                                            .stroke(Color.accentColor, lineWidth: 2)
-                                            .frame(width: 14, height: 14)
-                                            .overlay {
-                                                Image(systemName: "plus")
-                                                    .font(.system(size: 10, weight: .bold))
-                                            }
-                                        Text("Add destination")
-                                            .robotoFont(size: 12, weight: .regular)
-                                            .foregroundStyle(Color.customSecondaryText)
-                                    }
-                                })
-                                .padding(.top, 10)
                             }
                         }
+                        
+                        Button(action: {
+                            withAnimation(.none) {
+                                self.sections.append(.init(address: "", country: "", phone: "", others: ""))
+                            }
+                        }, label: {
+                            HStack {
+                                RoundedRectangle(cornerRadius: 5)
+                                    .stroke(Color.accentColor, lineWidth: 2)
+                                    .frame(width: 14, height: 14)
+                                    .overlay {
+                                        Image(systemName: "plus")
+                                            .font(.system(size: 10, weight: .bold))
+                                    }
+                                Text("Add destination")
+                                    .robotoFont(size: 12, weight: .regular)
+                                    .foregroundStyle(Color.customSecondaryText)
+                            }
+                        })
+                        .padding(.top, 10)
+                        
                         VStack(alignment: .leading) {
                             HStack {
                                 Text("Package Details")
