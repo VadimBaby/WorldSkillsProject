@@ -9,6 +9,8 @@ import Foundation
 import Network
 
 final class NetworkMonitor {
+    static let instance = NetworkMonitor()
+    
     @Published var isConnected: Bool = false
     
     private let networkManager: NWPathMonitor = .init()

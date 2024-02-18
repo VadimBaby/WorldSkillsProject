@@ -31,6 +31,8 @@
 		2C73A22E2B75128100462EF8 /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A22D2B75128100462EF8 /* KeyChainManager.swift */; };
 		2C73A2322B75174B00462EF8 /* OTPVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A2312B75174B00462EF8 /* OTPVerificationView.swift */; };
 		2C73A2362B751D4900462EF8 /* NewPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A2352B751D4900462EF8 /* NewPasswordView.swift */; };
+		2C9224052B81BBD400EE1BBB /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9224042B81BBD400EE1BBB /* WalletView.swift */; };
+		2C9224092B81CCA400EE1BBB /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9224082B81CCA400EE1BBB /* OrderModel.swift */; };
 		2CBB73A92B73335A003077DD /* RediExpressApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB73A82B73335A003077DD /* RediExpressApp.swift */; };
 		2CBB73AD2B73335B003077DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB73AC2B73335B003077DD /* Assets.xcassets */; };
 		2CBB73B02B73335B003077DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB73AF2B73335B003077DD /* Preview Assets.xcassets */; };
@@ -102,6 +104,8 @@
 		2C73A22D2B75128100462EF8 /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 		2C73A2312B75174B00462EF8 /* OTPVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVerificationView.swift; sourceTree = "<group>"; };
 		2C73A2352B751D4900462EF8 /* NewPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordView.swift; sourceTree = "<group>"; };
+		2C9224042B81BBD400EE1BBB /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
+		2C9224082B81CCA400EE1BBB /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		2CBB73A52B73335A003077DD /* RediExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RediExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBB73A82B73335A003077DD /* RediExpressApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RediExpressApp.swift; sourceTree = "<group>"; };
 		2CBB73AC2B73335B003077DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -305,6 +309,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		2C9224022B81BBC500EE1BBB /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				2C9224032B81BBCA00EE1BBB /* Views */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+		2C9224032B81BBCA00EE1BBB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C9224042B81BBD400EE1BBB /* WalletView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2CBB739C2B73335A003077DD = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +369,7 @@
 		2CBB73B62B7333E6003077DD /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2C9224022B81BBC500EE1BBB /* Wallet */,
 				2CBB73B72B7333EC003077DD /* LaunchScreen */,
 				2CBB73BB2B73383E003077DD /* Onboarding */,
 				2CBCCBC22B7B2EFA00CD893A /* Transaction */,
@@ -481,6 +502,7 @@
 				2CBCCBA62B7A4D9A00CD893A /* UserInfoModel.swift */,
 				2CBCCBB82B7A7C9500CD893A /* PackageModel.swift */,
 				2C1F62EB2B7F904700C4096A /* TransactionModel.swift */,
+				2C9224082B81CCA400EE1BBB /* OrderModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -765,6 +787,7 @@
 				2C73A1FF2B74DF6600462EF8 /* MainTextFieldStyle.swift in Sources */,
 				2CBCCBAF2B7A69A800CD893A /* NotificationView.swift in Sources */,
 				2CBCCBAB2B7A66C400CD893A /* AddPaymentView.swift in Sources */,
+				2C9224092B81CCA400EE1BBB /* OrderModel.swift in Sources */,
 				2C73A22E2B75128100462EF8 /* KeyChainManager.swift in Sources */,
 				2CBCCBB72B7A6EE100CD893A /* ShadowTextFieldStyle.swift in Sources */,
 				2CBB73E22B733C3C003077DD /* PrimaryButtonStyle.swift in Sources */,
@@ -777,6 +800,7 @@
 				2CBCCBA72B7A4D9A00CD893A /* UserInfoModel.swift in Sources */,
 				2C73A2252B75100300462EF8 /* ForgotPasswordView.swift in Sources */,
 				2C1F62EC2B7F904700C4096A /* TransactionModel.swift in Sources */,
+				2C9224052B81BBD400EE1BBB /* WalletView.swift in Sources */,
 				2CBB73A92B73335A003077DD /* RediExpressApp.swift in Sources */,
 				2C73A20A2B74E96600462EF8 /* String.swift in Sources */,
 				2C73A2322B75174B00462EF8 /* OTPVerificationView.swift in Sources */,

@@ -140,4 +140,41 @@ final class SupabaseManager {
             .insert(transaction)
             .execute()
     }
+    
+    func fetchTransactions() async throws -> [TransactionModel] {
+        let transactions: [TransactionModel] = try await supabase.database
+          .from(transactions)
+          .select()
+          .execute()
+          .value
+        
+        return transactions.sorted(by: {
+            return $0.created_at > $1.created_at
+        })
+    }
+    
+    func fetchLastPackage() async throws -> OrderModel {
+        let packages: [PackageModel] = try await supabase.database
+          .from(packages)
+          .select()
+          .execute()
+          .value
+        
+        let sortedPackages = packages.filter { package in
+            return package.status != "package_delivered"
+        }.sorted(by: {
+            $0.created_at > $1.created_at
+        })
+        
+        guard let first = sortedPackages.first else { throw URLError(.badServerResponse) }
+        
+        let destinations: [DestinationModel] = try await supabase.database
+            .from(destinations)
+            .select()
+            .eq("package_id", value: first.id)
+            .execute()
+            .value
+        
+        return OrderModel(package: first, destinations: destinations)
+    }
 }

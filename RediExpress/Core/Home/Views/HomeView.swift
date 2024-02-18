@@ -33,9 +33,9 @@ enum Tabs: String, CaseIterable {
         case .home:
             Text("Home")
         case .wallet:
-            Text("Wallet")
+            WalletView()
         case .track:
-            Text("Track")
+            TrackingPackageView()
         case .profile:
             ProfileView()
         }

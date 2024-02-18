@@ -29,8 +29,9 @@ struct PackageModel: Codable {
     let weight_of_item: String
     let worth_of_items: String
     var customer_id: UUID
+    let status: String
     
     func changeCustomer(customerId: UUID) -> PackageModel {
-        return PackageModel(id: id, created_at: created_at, origin_address: origin_address, origin_state_country: origin_state_country, origin_phone_number: origin_phone_number, origin_others: origin_others, package_item: package_item, weight_of_item: weight_of_item, worth_of_items: worth_of_items, customer_id: customerId)
+        return PackageModel(id: id, created_at: created_at, origin_address: origin_address, origin_state_country: origin_state_country, origin_phone_number: origin_phone_number, origin_others: origin_others, package_item: package_item, weight_of_item: weight_of_item, worth_of_items: worth_of_items, customer_id: customerId, status: status)
     }
 }

@@ -231,7 +231,8 @@ struct SendPackage: View {
                         package_item: items,
                         weight_of_item: weight,
                         worth_of_items: worth,
-                        customer_id: UUID()
+                        customer_id: UUID(),
+                        status: "courier_requested"
                     )
                     
                     try await SupabaseManager.instance.sendPackage(package: package, sections: sections)
