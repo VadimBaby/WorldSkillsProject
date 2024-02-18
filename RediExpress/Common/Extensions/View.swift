@@ -61,4 +61,12 @@ extension View {
         }
         .navigationBarHidden(true)
     }
+    
+    @ViewBuilder func `if`<Content: View>(condition: Bool, content: (_ content: Content) -> Content) -> some View {
+        if condition, let par = self as? Content {
+            content(par)
+        } else {
+            self
+        }
+    }
 }

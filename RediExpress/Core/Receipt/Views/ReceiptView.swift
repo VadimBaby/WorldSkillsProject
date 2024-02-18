@@ -21,9 +21,12 @@ struct ReceiptView: View {
     let worth: String
     let trackNumber: String
     
+    let isTrack: Bool
+    
     @Environment(\.dismiss) var dismiss
     
     @State private var isNavigate: Bool = false
+    @State private var isNavigateSuccessfull: Bool = false
     
     var body: some View {
         ScrollView {
@@ -150,20 +153,44 @@ struct ReceiptView: View {
                         
                     }
                 }
-                HStack {
-                    Button("Edit Package") {
-                        dismiss()
+                if !isTrack {
+                    HStack {
+                        Button("Edit Package") {
+                            dismiss()
+                        }
+                        .buttonStyle(SecondaryButtonStyle(width: 160))
+                        Spacer()
+                        Button("Make Payment") {
+                            self.isNavigate = true
+                        }
+                        .buttonStyle(PrimaryButtonStyle(width: 160))
                     }
-                    .buttonStyle(SecondaryButtonStyle(width: 160))
-                    Spacer()
-                    Button("Make Payment") {
-                        self.isNavigate = true
+                    .padding(.top)
+                    NavigationLink(destination: TransactionView(track: trackNumber), isActive: $isNavigate) {
+                        EmptyView()
                     }
-                    .buttonStyle(PrimaryButtonStyle(width: 160))
-                }
-                .padding(.top)
-                NavigationLink(destination: TransactionView(track: trackNumber), isActive: $isNavigate) {
-                    EmptyView()
+                } else {
+                    VStack(spacing: 14) {
+                        Text("Click on  delivered for successful delivery and rate rider or report missing item")
+                            .robotoFont(size: 12, weight: .regular)
+                            .foregroundStyle(Color.accentColor)
+                        HStack {
+                            Button("Report") {
+                                
+                            }
+                            .buttonStyle(SecondaryButtonStyle(width: 160))
+                            Spacer()
+                            Button("Successful") {
+                                self.isNavigateSuccessfull = true
+                            }
+                            .buttonStyle(PrimaryButtonStyle(width: 160))
+                        }
+                        .padding(.top)
+                        NavigationLink(destination: DeliverySuccessView(track: trackNumber), isActive: $isNavigateSuccessfull) {
+                            EmptyView()
+                        }
+                    }
+                    .padding(.top, 24)
                 }
             }
             .padding(.top, 20)
@@ -200,7 +227,8 @@ struct ReceiptView: View {
         items: "items",
         weight: "weight",
         worth: "worth",
-        trackNumber: "R-\(UUID().uuidString)"
+        trackNumber: "R-\(UUID().uuidString)",
+        isTrack: true
     )
         .addNavigationStack()
 }

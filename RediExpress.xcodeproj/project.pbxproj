@@ -33,6 +33,7 @@
 		2C73A2362B751D4900462EF8 /* NewPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73A2352B751D4900462EF8 /* NewPasswordView.swift */; };
 		2C9224052B81BBD400EE1BBB /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9224042B81BBD400EE1BBB /* WalletView.swift */; };
 		2C9224092B81CCA400EE1BBB /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9224082B81CCA400EE1BBB /* OrderModel.swift */; };
+		2C92240B2B81FA7400EE1BBB /* StatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C92240A2B81FA7400EE1BBB /* StatusModel.swift */; };
 		2CBB73A92B73335A003077DD /* RediExpressApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB73A82B73335A003077DD /* RediExpressApp.swift */; };
 		2CBB73AD2B73335B003077DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB73AC2B73335B003077DD /* Assets.xcassets */; };
 		2CBB73B02B73335B003077DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB73AF2B73335B003077DD /* Preview Assets.xcassets */; };
@@ -73,6 +74,10 @@
 		2CBCCBC52B7B2F1A00CD893A /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBCCBC42B7B2F1A00CD893A /* TransactionView.swift */; };
 		2CBCCBC72B7B3B3900CD893A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBCCBC62B7B3B3900CD893A /* LocationManager.swift */; };
 		2CCD7C5F2B735280005A4A45 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD7C5E2B735280005A4A45 /* UserDefaultsKeys.swift */; };
+		2CDC1E9D2B822516009A9DC0 /* TrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDC1E9C2B822516009A9DC0 /* TrackingViewModel.swift */; };
+		2CDC1EA12B8239C6009A9DC0 /* DeliverySuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDC1EA02B8239C6009A9DC0 /* DeliverySuccessView.swift */; };
+		2CDC1EA32B823CD8009A9DC0 /* DeviceMotionMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDC1EA22B823CD8009A9DC0 /* DeviceMotionMonitor.swift */; };
+		2CDC1EA52B823EB5009A9DC0 /* FeedbackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDC1EA42B823EB5009A9DC0 /* FeedbackModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +111,7 @@
 		2C73A2352B751D4900462EF8 /* NewPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordView.swift; sourceTree = "<group>"; };
 		2C9224042B81BBD400EE1BBB /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		2C9224082B81CCA400EE1BBB /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
+		2C92240A2B81FA7400EE1BBB /* StatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModel.swift; sourceTree = "<group>"; };
 		2CBB73A52B73335A003077DD /* RediExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RediExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBB73A82B73335A003077DD /* RediExpressApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RediExpressApp.swift; sourceTree = "<group>"; };
 		2CBB73AC2B73335B003077DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -149,6 +155,10 @@
 		2CBCCBC42B7B2F1A00CD893A /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
 		2CBCCBC62B7B3B3900CD893A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2CCD7C5E2B735280005A4A45 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		2CDC1E9C2B822516009A9DC0 /* TrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewModel.swift; sourceTree = "<group>"; };
+		2CDC1EA02B8239C6009A9DC0 /* DeliverySuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliverySuccessView.swift; sourceTree = "<group>"; };
+		2CDC1EA22B823CD8009A9DC0 /* DeviceMotionMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMotionMonitor.swift; sourceTree = "<group>"; };
+		2CDC1EA42B823EB5009A9DC0 /* FeedbackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				2C73A20E2B74EFEC00462EF8 /* SupabaseManager.swift */,
+				2CDC1EA22B823CD8009A9DC0 /* DeviceMotionMonitor.swift */,
 				2CBCCBC62B7B3B3900CD893A /* LocationManager.swift */,
 				2C73A22D2B75128100462EF8 /* KeyChainManager.swift */,
 				2C3CD8312B78ED1600DD472F /* NetworkMonitor.swift */,
@@ -369,6 +380,7 @@
 		2CBB73B62B7333E6003077DD /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2CDC1E9E2B8239AC009A9DC0 /* DilevirySuccess */,
 				2C9224022B81BBC500EE1BBB /* Wallet */,
 				2CBB73B72B7333EC003077DD /* LaunchScreen */,
 				2CBB73BB2B73383E003077DD /* Onboarding */,
@@ -503,6 +515,8 @@
 				2CBCCBB82B7A7C9500CD893A /* PackageModel.swift */,
 				2C1F62EB2B7F904700C4096A /* TransactionModel.swift */,
 				2C9224082B81CCA400EE1BBB /* OrderModel.swift */,
+				2C92240A2B81FA7400EE1BBB /* StatusModel.swift */,
+				2CDC1EA42B823EB5009A9DC0 /* FeedbackModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -623,6 +637,7 @@
 		2CBCCBBE2B7A855C00CD893A /* TrackingPackage */ = {
 			isa = PBXGroup;
 			children = (
+				2CDC1E9B2B822506009A9DC0 /* ViewModels */,
 				2CBCCBBF2B7A856500CD893A /* Views */,
 			);
 			path = TrackingPackage;
@@ -648,6 +663,30 @@
 			isa = PBXGroup;
 			children = (
 				2CBCCBC42B7B2F1A00CD893A /* TransactionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2CDC1E9B2B822506009A9DC0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2CDC1E9C2B822516009A9DC0 /* TrackingViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2CDC1E9E2B8239AC009A9DC0 /* DilevirySuccess */ = {
+			isa = PBXGroup;
+			children = (
+				2CDC1E9F2B8239B8009A9DC0 /* Views */,
+			);
+			path = DilevirySuccess;
+			sourceTree = "<group>";
+		};
+		2CDC1E9F2B8239B8009A9DC0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2CDC1EA02B8239C6009A9DC0 /* DeliverySuccessView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -782,6 +821,7 @@
 				2CBCCBB52B7A6E5F00CD893A /* SendPackage.swift in Sources */,
 				2CBB73DE2B733A64003077DD /* View.swift in Sources */,
 				2C73A2052B74E72E00462EF8 /* PoliticyPDFView.swift in Sources */,
+				2CDC1EA12B8239C6009A9DC0 /* DeliverySuccessView.swift in Sources */,
 				2CBB73ED2B73402A003077DD /* ViewModel.swift in Sources */,
 				2CBB73F12B7340EA003077DD /* HolderView.swift in Sources */,
 				2C73A1FF2B74DF6600462EF8 /* MainTextFieldStyle.swift in Sources */,
@@ -794,9 +834,12 @@
 				2C73A1F92B74DC7C00462EF8 /* SignUpView.swift in Sources */,
 				2C3CD8322B78ED1600DD472F /* NetworkMonitor.swift in Sources */,
 				2CBB73BE2B73385C003077DD /* OnboardingView.swift in Sources */,
+				2CDC1E9D2B822516009A9DC0 /* TrackingViewModel.swift in Sources */,
 				2C73A20C2B74EE9F00462EF8 /* Binding.swift in Sources */,
 				2CCD7C5F2B735280005A4A45 /* UserDefaultsKeys.swift in Sources */,
 				2CBCCBC12B7A857000CD893A /* TrackingPackageView.swift in Sources */,
+				2CDC1EA32B823CD8009A9DC0 /* DeviceMotionMonitor.swift in Sources */,
+				2CDC1EA52B823EB5009A9DC0 /* FeedbackModel.swift in Sources */,
 				2CBCCBA72B7A4D9A00CD893A /* UserInfoModel.swift in Sources */,
 				2C73A2252B75100300462EF8 /* ForgotPasswordView.swift in Sources */,
 				2C1F62EC2B7F904700C4096A /* TransactionModel.swift in Sources */,
@@ -804,6 +847,7 @@
 				2CBB73A92B73335A003077DD /* RediExpressApp.swift in Sources */,
 				2C73A20A2B74E96600462EF8 /* String.swift in Sources */,
 				2C73A2322B75174B00462EF8 /* OTPVerificationView.swift in Sources */,
+				2C92240B2B81FA7400EE1BBB /* StatusModel.swift in Sources */,
 				2CBB73EA2B733E67003077DD /* QueueItemModel.swift in Sources */,
 				2CBCCBC52B7B2F1A00CD893A /* TransactionView.swift in Sources */,
 				2C73A2212B74F1BF00462EF8 /* LogInView.swift in Sources */,

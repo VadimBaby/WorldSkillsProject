@@ -171,7 +171,8 @@ struct SendPackage: View {
                         items: items,
                         weight: weight,
                         worth: worth,
-                        trackNumber: track
+                        trackNumber: track,
+                        isTrack: false
                     ),
                     isActive: $isNavigate,
                     label: {
@@ -232,7 +233,7 @@ struct SendPackage: View {
                         weight_of_item: weight,
                         worth_of_items: worth,
                         customer_id: UUID(),
-                        status: "courier_requested"
+                        is_active: true
                     )
                     
                     try await SupabaseManager.instance.sendPackage(package: package, sections: sections)

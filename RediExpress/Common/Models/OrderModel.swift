@@ -10,4 +10,5 @@ import Foundation
 struct OrderModel: Codable {
     let package: PackageModel
     let destinations: [DestinationModel]
+    let status: [StatusModel]
 }

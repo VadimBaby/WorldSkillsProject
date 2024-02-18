@@ -15,5 +15,10 @@ struct TransactionModel: Codable {
     let tax_and_services_charges: Int
     let total: Int
     let package_id: String
+    let customer_id: UUID
+    
+    func setNewUserID(customer: UUID) -> TransactionModel {
+        return TransactionModel(id: id, created_at: created_at, charges: charges, instant: instant, tax_and_services_charges: tax_and_services_charges, total: total, package_id: package_id, customer_id: customer)
+    }
 }
 
