@@ -25,7 +25,7 @@ struct TrackingPackageView: View {
     
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM d, yyyy"
+        formatter.dateFormat = "MMMM d, HH:mm"
         
         return formatter
     }
@@ -151,7 +151,7 @@ struct TrackingPackageView: View {
                     viewModel.setOrder(order: order)
                 }
             } catch {
-                print(error.localizedDescription)
+                debugPrint(error)
                 await MainActor.run {
                     self.isHaveActiveOrder = false
                 }

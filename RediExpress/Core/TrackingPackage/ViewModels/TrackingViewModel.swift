@@ -80,7 +80,7 @@ extension TrackingPackageView {
                                 let status: String
                                 let package_id: String
                             }
-                            
+                        
                             let decodeUpdate = try update.decodeRecord(as: DecodeUpdate.self, decoder: JSONDecoder())
                             
                             let item = StatusModel(id: decodeUpdate.id, created_at: .now, status: decodeUpdate.status, package_id: decodeUpdate.package_id)
@@ -91,7 +91,7 @@ extension TrackingPackageView {
                             }
                             
                         } catch {
-                            print(error.localizedDescription)
+                            debugPrint("erro: " + error.localizedDescription)
                         }
                     }
                 }
