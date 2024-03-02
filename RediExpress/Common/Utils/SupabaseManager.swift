@@ -20,6 +20,9 @@ final class SupabaseManager {
     private let transactions: String = "transactions"
     private let status: String = "status"
     private let feedbacks: String = "feedbacks"
+    private let messages: String = "messages"
+    
+    private let avatars: String = "avatars"
     
     // подключение supabase
     let supabase = SupabaseClient(supabaseURL: URL(string: "https://ojrdmoyefygpgzqyuemx.supabase.co")!, supabaseKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9qcmRtb3llZnlncGd6cXl1ZW14Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDcyOTU2NDUsImV4cCI6MjAyMjg3MTY0NX0.ZgAyZ57Ga_qcX-632P8ZmtQ7r0bfN8fc-CVnpfupzV8")
@@ -48,7 +51,7 @@ final class SupabaseManager {
         
         let user = try await supabase.auth.session.user
         
-        let userinfo = UserInfoModel(id: user.id, created_at: .now, balance: 0)
+        let userinfo = UserInfoModel(id: user.id, name: name, created_at: .now, balance: 0, isCourier: false)
 
         try await supabase.database
           .from(user_info)
@@ -206,6 +209,10 @@ final class SupabaseManager {
         return await supabase.realtimeV2.channel("public:status")
     }
     
+    func getAllMessagesChannel() async -> RealtimeChannelV2 {
+        return await supabase.realtimeV2.channel("public:messages")
+    }
+    
     func sendFeedback(rate: Int, feedback: String, track: String) async throws {
         guard feedback.count < 11 else { return }
         
@@ -217,5 +224,86 @@ final class SupabaseManager {
             .from(feedbacks)
             .insert(feedbackModel)
             .execute()
+    }
+    
+    func fetchUsers() async throws -> [UserChatModel] {
+        let user = try await supabase.auth.user()
+        
+        let thatUser: [UserInfoModel] = try await supabase.database
+            .from(user_info)
+            .select()
+            .eq("id", value: user.id)
+            .execute()
+            .value
+        
+        guard let iam = thatUser.first else { throw URLError(.badServerResponse) }
+        
+        let users: [UserInfoModel] = try await supabase.database
+            .from(user_info)
+            .select()
+            .eq("isCourier", value: !iam.isCourier)
+            .execute()
+            .value
+        
+        let messages: [MessageModel] = try await supabase.database
+            .from(messages)
+            .select()
+            .execute()
+            .value
+        
+        var result: [UserChatModel] = []
+        
+        users.forEach { user in
+            let message = messages.filter { $0.recipient_id == user.id || $0.sender_id == user.id }.sorted{ $0.created_at > $1.created_at }.first
+            
+            result.append(.init(user: user, message: message))
+        }
+        
+        return result
+    }
+    
+    func fetchAvatar(id: String) async throws -> Data {
+        return try await supabase.storage
+          .from(avatars)
+          .download(path: "public/\(id).jpg")
+    }
+    
+    func GetUserId() async throws -> UUID {
+        return try await supabase.auth.session.user.id
+    }
+    
+    func getAllMessages(person: UUID) async throws -> [MessageChatModel] {
+        let user = try await supabase.auth.user()
+        
+        let messages: [MessageModel] = try await supabase.database
+            .from(messages)
+            .select()
+            .execute()
+            .value
+        
+        let filteredMessages = messages.filter { message in
+            return (message.recipient_id == person && message.sender_id == user.id) || (message.recipient_id == user.id && message.sender_id == person)
+        }
+        
+        let realMessages = filteredMessages.map {
+            MessageChatModel(message: $0, myMessage: $0.sender_id == user.id)
+        }
+        
+        return realMessages
+    }
+    
+    func sendMessage(message: String, to: UUID) async throws {
+        let user = try await supabase.auth.user()
+        
+        let message = MessageModel(id: UUID(), created_at: .now, message: message, sender_id: user.id, recipient_id: to)
+        
+        try await supabase.database
+            .from(messages)
+            .insert(message)
+            .execute()
+    }
+    
+    func getChatChannel() async -> RealtimeChannelV2 {
+        return await supabase.realtimeV2.channel("public:chat")
     }
 }

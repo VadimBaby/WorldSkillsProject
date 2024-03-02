@@ -9,6 +9,8 @@ import Foundation
 
 struct UserInfoModel: Codable {
     let id: UUID
+    let name: String
     let created_at: Date
     let balance: Double
+    let isCourier: Bool
 }

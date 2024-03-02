@@ -31,7 +31,9 @@ enum Tabs: String, CaseIterable {
     @ViewBuilder var view: some View {
         switch self {
         case .home:
-            Text("Home")
+            NavigationLink("Chats") {
+                ChatsView()
+            }
         case .wallet:
             WalletView()
         case .track:
