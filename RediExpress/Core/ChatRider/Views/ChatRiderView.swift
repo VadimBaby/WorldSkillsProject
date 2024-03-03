@@ -11,13 +11,13 @@ import Realtime
 struct ChatRiderView: View {
     @StateObject private var viewModel: Self.ViewModel
     
-    @State private var avatar: Data? = nil
+    let avatar: Data?
     
     let chat: UserChatModel
     
-    init(chat: UserChatModel) {
+    init(chat: UserChatModel, avatar: Data?) {
         self.chat = chat
-        
+        self.avatar = avatar
         self._viewModel = StateObject(wrappedValue: .init(person: chat.user.id))
     }
     
@@ -133,8 +133,13 @@ extension ChatRiderView {
                 }
                 .frame(maxHeight: .infinity)
                 Spacer()
-                Image(systemName: "phone")
-                    .foregroundStyle(Color.accentColor)
+                NavigationLink {
+                    CallRiderView(chat: chat, avatar: avatar)
+                } label: {
+                    Image(systemName: "phone")
+                        .foregroundStyle(Color.accentColor)
+                }
+
             }
             .padding(.horizontal)
             .frame(height: 55)
@@ -147,19 +152,5 @@ extension ChatRiderView {
             }
         }
         .navigationBarHidden(true)
-        .task {
-            do {
-                print(chat.user.name + " " + chat.user.id.uuidString)
-                let data = try await SupabaseManager.instance.fetchAvatar(id: chat.user.id.uuidString)
-                await MainActor.run {
-                    self.avatar = data
-                }
-            } catch {
-                print("Error " + error.localizedDescription)
-                await MainActor.run {
-                    self.avatar = .init()
-                }
-            }
-        }
     }
 }

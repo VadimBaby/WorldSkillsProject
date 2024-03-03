@@ -13,4 +13,5 @@ struct UserInfoModel: Codable {
     let created_at: Date
     let balance: Double
     let isCourier: Bool
+    let phone: String
 }

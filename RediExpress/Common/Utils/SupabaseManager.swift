@@ -51,7 +51,7 @@ final class SupabaseManager {
         
         let user = try await supabase.auth.session.user
         
-        let userinfo = UserInfoModel(id: user.id, name: name, created_at: .now, balance: 0, isCourier: false)
+        let userinfo = UserInfoModel(id: user.id, name: name, created_at: .now, balance: 0, isCourier: false, phone: phone)
 
         try await supabase.database
           .from(user_info)
@@ -268,6 +268,29 @@ final class SupabaseManager {
           .download(path: "public/\(id).jpg")
     }
     
+    func getUser() async throws -> UserInfoModel {
+        let user = try await supabase.auth.session.user
+        
+        let users: [UserInfoModel] = try await supabase.database
+            .from(user_info)
+            .select()
+            .eq("id", value: user.id)
+            .execute()
+            .value
+        
+        guard let that = users.first else { throw URLError(.badServerResponse) }
+        
+        return that
+    }
+    
+    func fetchMyAvatar() async throws -> Data {
+        let user = try await supabase.auth.session.user
+        
+        return try await supabase.storage
+          .from(avatars)
+          .download(path: "public/\(user.id).jpg")
+    }
+    
     func GetUserId() async throws -> UUID {
         return try await supabase.auth.session.user.id
     }
@@ -305,5 +328,31 @@ final class SupabaseManager {
     
     func getChatChannel() async -> RealtimeChannelV2 {
         return await supabase.realtimeV2.channel("public:chat")
+    }
+    
+    func uploadAvatar(avatar: Data) async throws {
+        let user = try await supabase.auth.session.user
+        
+        let fileName = "\(user.id).jpg"
+
+        do {
+            try await supabase.storage
+              .from(avatars)
+              .upload(
+                path: "public/\(fileName)",
+                file: avatar
+              )
+            print("avatar updated")
+        } catch {
+            print("Avatar upload Error: " + error.localizedDescription)
+            do {
+                try await supabase.storage
+                    .from(avatars)
+                    .update(path: "public/\(fileName)", file: avatar)
+                print("avatar updated")
+            } catch {
+                print("Avatar update Error: " + error.localizedDescription)
+            }
+        }
     }
 }

@@ -15,7 +15,7 @@ struct ChatItemView: View {
     
     var body: some View {
         NavigationLink(destination: {
-            ChatRiderView(chat: chat)
+            ChatRiderView(chat: chat, avatar: avatar)
         }, label: {
             HStack {
                 if let avatar {
