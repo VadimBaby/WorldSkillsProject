@@ -38,17 +38,6 @@ struct OnboardingView: View {
                         }
                     }
                     
-//                    if currentQueueItem.id == "QuickDelivery" {
-                    //    OnboardingTopView(image: currentQueueItem.image, title: currentQueueItem.title, subtitle: currentQueueItem.subtitle)
-//                            .transition(.opacity)
-//                    } else if currentQueueItem.id == "FlexiblePayment" {
-//                        OnboardingTopView(image: currentQueueItem.image, title: currentQueueItem.title, subtitle: currentQueueItem.subtitle)
-//                            .transition(.opacity)
-//                    } else if currentQueueItem.id == "RealTimeTracking" {
-//                        OnboardingTopView(image: currentQueueItem.image, title: currentQueueItem.title, subtitle: currentQueueItem.subtitle)
-//                            .transition(.opacity)
-//                    }
-                    
                     Spacer()
                     
                     VStack {

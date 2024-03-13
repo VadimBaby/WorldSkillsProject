@@ -69,13 +69,12 @@ struct SignUpView: View {
                 
                 HStack(alignment: .top, spacing: 25) {
                     CheckBox(value: $checked)
-                    VStack {
-                        Text("By ticking this box, you agree to our")
-                            .foregroundStyle(Color.customSecondaryText)
-                        NavigationLink("Terms and conditions and private policy") {
+                    HStack {
+                        NavigationLink("\(Text("By ticking this box, you agree to our").foregroundColor(Color.customSecondaryText)) Terms and conditions and private policy") {
                             PoliticyPDFView()
                         }
                         .foregroundStyle(Color.warning)
+                        .lineLimit(nil)
                     }
                     .robotoFont(size: 12)
                 }
