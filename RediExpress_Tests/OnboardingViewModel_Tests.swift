@@ -32,16 +32,16 @@ final class OnboardingViewModel_Tests: XCTestCase {
         var i = viewModel.queue.count
         
         while true {
-            guard let firstElementQueue = viewModel.queue.first else { return }
+            guard let firstQueueElement = viewModel.queue.first else { return }
             
-            guard i != 0 else { XCTFail(); return }
+            guard i > 0 else { XCTFail(); return }
             
             viewModel.next()
             i -= 1
             
-            guard let currentQueueItem = viewModel.currentQueueItem else { return }
+            guard let currentQueueElement = viewModel.currentQueueItem else { return }
             
-            XCTAssertEqual(currentQueueItem.id, firstElementQueue.id)
+            XCTAssertEqual(firstQueueElement.id, currentQueueElement.id)
         }
     }
     
@@ -55,18 +55,19 @@ final class OnboardingViewModel_Tests: XCTestCase {
         while true {
             guard !viewModel.queue.isEmpty else { return }
             
-            guard i != 0 else { XCTFail(); return }
+            guard i > 0 else { XCTFail(); return }
             
             let oldCount = viewModel.queue.count
             
             viewModel.next()
-            i -= 1
             
-            let newCount = viewModel.queue.count
+            let nowCount = viewModel.queue.count
             
-            let difference = oldCount - newCount
+            let difference = oldCount - nowCount
             
             XCTAssertEqual(difference, 1)
+            
+            i -= 1
         }
     }
     
@@ -81,10 +82,11 @@ final class OnboardingViewModel_Tests: XCTestCase {
             guard viewModel.queue.count > 1 else { return }
             
             guard i > 1 else { XCTFail(); return }
-    
-            XCTAssertEqual(viewModel.showSkipAndNextButton, true)
+            
+            XCTAssertTrue(viewModel.showSkipAndNextButton)
             
             viewModel.next()
+            
             i -= 1
         }
     }
@@ -100,16 +102,28 @@ final class OnboardingViewModel_Tests: XCTestCase {
     // Если очередь пустая и пользователь нажал на кнопку “Sing in”, происходит открытие пустого экрана «Holder» приложения. Если очередь не пустая – переход отсутствует.
     
     func test_OnboardingViewModel_IfQueueIsEmptyAndUserPressSignInThenHolderIsOpenedElseQueueIsNotEmptyThenHolderIsNotOpened() {
-        let viewModel = OnboardingView.ViewModel(watchedQueueItemId: nil, customQueue: [])
+        let viewModel = OnboardingView.ViewModel(watchedQueueItemId: nil, customQueue: queue)
         
-        viewModel.next()
+        var i = viewModel.queue.count
         
-        XCTAssertNil(viewModel.currentQueueItem)
-        
-        let viewModel2 = OnboardingView.ViewModel(watchedQueueItemId: nil, customQueue: queue)
-        
-        viewModel2.next()
-        
-        XCTAssertNotNil(viewModel2.currentQueueItem)
+        while true {
+            guard i < 0 else { return }
+            
+            if viewModel.queue.isEmpty {
+                guard i == 0 else { XCTFail(); return}
+                
+                viewModel.next()
+                
+                XCTAssertNil(viewModel.currentQueueItem)
+            } else {
+                guard i > 0 else { XCTFail(); return}
+                
+                viewModel.next()
+                
+                XCTAssertNotNil(viewModel.currentQueueItem)
+            }
+            
+            i -= 1
+        }
     }
 }
